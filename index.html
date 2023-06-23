@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabalho Redes-I 2023.1 MQTT</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+  <body>
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <ol class="container carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">Introdução</li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1">História</li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2">Definição</li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3">Exemplos</li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4">Implementações</li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="5">Conclusão</li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="6">Referências</li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="#intro"><img class="d-block w-100" src="image1.jpg" alt="First slide" /></a>
+        </div>
+        <div class="carousel-item">
+          <a href="#história"><img class="d-block w-100" src="image2.jpg" alt="Second slide" /></a>
+        </div>
+        <div class="carousel-item">
+          <a href="#definição"><img class="d-block w-100" src="image3.jpg" alt="Third slide" /></a>
+        </div>
+        <div class="carousel-item">
+          <a href="#exemplos"><img class="d-block w-100" src="image4.jpg" alt="Fouth slide" /></a>
+        </div>
+        <div class="carousel-item">
+          <a href="#implementações"><img class="d-block w-100" src="image5.jpg" alt="Fifth slide" /></a>
+        </div>
+        <div class="carousel-item">
+          <a href="#conclusão"><img class="d-block w-100" src="image6.jpg" alt="Sixth slide" /></a>
+        </div>
+        <div class="carousel-item">
+          <a href="#referências"><img class="d-block w-100" src="image7.jpg" alt="Seventh slide" /></a>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="container orange md-3 justify-content-center">
+      <h1 class="jumbotron d-flex page-header">MQTT</h1>
+      <div id="intro">
+        <p class="lead blue md-5">
+          Introdução
+        </p>
+        <div class="panel">
+          <p>
+            Este artigo tem como objetivo um resumo bibliográfico, em forma de
+            website, do protocolo MQTT para a disciplina de Redes de Computadores
+            I ministrada pelo professor Luís Kowalski na Universidade Federal do
+            Rio de Janeiro. Ao longo das seções serão abordados assuntos inerentes
+            à tecnologia em questão, tal como: História, Objetivo, Propósitos,
+            desenvolvimentos e o projeções futuras. Além disso, será também
+            apresentado aplicações MQTT com a exibição prática de um dispositivo
+            que faz uso do protocolo. Por fim, cabe mencionar que as referências
+            bibliográficas neste artigo estarão dispostas na aba “fontes” do
+            website. O protocolo MQTT configura-se, de forma resumida, em um
+            protocolo de rede voltado para o uso de equipamentos IoT(Internet of
+            things - Internet das Coisas em tradução literal)[1], tendo aplicações
+            desde de o ramo petrolífero - em sensores de temperatura e medição de
+            tanques - até à vida rotineira como em casas inteligentes[2]. Por
+            esses fatores, define-se também como uma tecnologia eficiente e de
+            fácil implementação, visto as características intrínsecas ao
+            desenvolvimento dos Inventos IoT[3] - dispensar os “tecnicismos” e
+            prezar pela flexibilidade. Apesar de ser uma tecnologia considerada
+            antiga - não em termos de tempo em si, mas em razão da constante
+            mudança de eras tecnológicas -, o cerne do protocolo de comunicação
+            continua o mesmo. Contudo, diversas inovações surgiram, sendo a mais
+            significante residindo no fato de sua passagem de software privado
+            para uma técnica open-source, reafirmando e propagando, assim, seu
+            status como um dos padrões na transmissão de dados na Internet das
+            Coisas[3].</p>
+        </div>
+      </div>
+      <div id="história">
+        <p class="lead">Contexto Histórico</p>
+        <div class="panel">
+          <p>MQQT foi pensado para monitorar oleodutos.</p>
+        </div>
+      </div>
+      <div id="definição">
+        <p class="lead">Definição</p>
+        <div class="panel">
+          <p>É um protocolo Brooker-Subscriber.</p>
+        </div>
+      </div>
+      <div id="exemplos">
+        <p class="lead">Exemplos Praticos</p>
+        <div class="panel">
+          <p>Exemplos de USO</p>
+        </div>
+      </div>
+      <div id="implementações">
+        <p class="lead">Implementações</p>
+        <div class="panel">
+          <p>Implementação dos colegas de ECA.</p>
+        </div>
+      </div>
+      <div id="conclusão">
+        <p class="lead">Conclusão</p>
+        <div class="panel">
+          <p>MQQT é muitom bom nessas condições.</p>
+        </div>
+      </div>
+      <div id="referências">
+        <p class="lead">Referências</p>
+        <div class="panel">
+          <p>1. Página inicial do MQTT. Disponível em: <a href="https://mqtt.org/getting-started/">https://mqtt.org/getting-started/</a>.<br>
+            2. Essenciais do MQTT. Disponível em: <a href="https://www.hivemq.com/mqtt-essentials/">https://www.hivemq.com/mqtt-essentials/</a>.<br>
+            3. Mishra, B.; Kertesz, A. "The Use of MQTT in M2M and IoT Systems: A Survey". In: IEEE (Ed.). IEEE Xplore Digital Library, 2020. DOI: <a href="https://doi.org/10.1109/ACCESS.2020.3030625">10.1109/ACCESS.2020.3030625</a>.<br>
+            4. Thangavel, D.; Ma, X.; Valera, A.; Tan, H.-X.; Tan, C. K.-Y. "Performance evaluation of MQTT and CoAP via a common middleware". In: IEEE (Ed.). IEEE Xplore Digital Library, 2014. DOI: <a href="https://doi.org/10.1109/ICII.2014.7036789">10.1109/ICII.2014.7036789</a>.<br>
+            5. Hillar, G. C. <i>MQTT Essentials - A Lightweight IoT Protocol</i>. Editora: Packt Publishing Ltd, 2017. ISBN: 978-1-78712-563-3.<br>
+            6. Aplicação do protocolo MQTT na indústria de petróleo e gás. Disponível em: <a href="https://www.emqx.com/en/blog/application-of-mqtt-protocol-in-oil-and-gas-industry/">https://www.emqx.com/en/blog/application-of-mqtt-protocol-in-oil-and-gas-industry/</a>.<br>
+            7. Comunicando-se com MQTT. Disponível em: <a href="https://www.ibm.com/docs/en/mapms/1_cloud?topic=applications-communicating-mqtt">https://www.ibm.com/docs/en/mapms/1_cloud?topic=applications-communicating-mqtt</a>.
+            </p> 
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

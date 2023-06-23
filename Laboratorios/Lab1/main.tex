@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+\usepackage{graphicx,url}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}  
+
+     
+\sloppy
+
+\title{TEMPLATE}
+
+\author{Gabriel S. -- DRE: XXXXXXXXX\\ \and Leo -- DRE: XXXXXXXXX\\ \and Lucas I. -- DRE: XXXXXXXXX}
+
+\address{PESC -- Universidade Federal do Rio de Janeiro (UFRJ)
+  \email{leonardongc@poli.ufrj.br}
+}
+
+\begin{document} 
+
+\maketitle
+
+\section{}
+browser - http 1.1; servidor idem
+\section{}
+inglês - global; inglês - EUA
+\section{}
+IP-source: 10.0.0.101; IP-destination: 146.164.70.1
+\section{}
+ status: 304
+\section{}
+date 26/04/2023 15:40 GMT
+\section{}
+415 bytes de quadro
+\section{}
+Não notamos diferença
+\section{}
+No primeiro GET (com o cache e histórico limpo), não se observou tal sentença.
+\section{}
+Em resposta ao GET inicial o servidor retornou o conteúdo do arquivo. Isso pode ser constatado mediante a análise da aba Hypertext Transfer Protocol e Line-Based Text Data. No primeiro pode-se observar que o conteúdo é chamado e mostrado no segundo. 
+\section{}
+Após a atualização da página -- gerando um segundo GET -- foi possível visualizá-la: If-Modified-Since: Tue, 16 May 2023 05:59:01 GMT\\r\\n.
+\section{}
+HTTP/1.1 304 Not Modified. Não, não foram retornados o conteúdo dos arquivos, visto que  os dados foram carregados do cache browser. Isso se confirma, seguindo a linha de raciocínio da questão 9, no GET posterior, o Line-Based Text Data não apareceu, indicando que a página foi carregada do cache.
+\section{}
+dois http get, pckt \#802
+\section{}
+pckt \#802, 
+\section{}
+status 200 OK (text/html)
+\section{}
+5 segmentos
+\section{}
+3 GETs: 
+\section{}
+Sequencialmente olhando os timestamps do TCP
+\section{}
+401 UNAUTHORIZED
+\section{}
+Campo de autorização
+
+
+\end{document}
