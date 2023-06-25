@@ -1,6 +1,6 @@
-<!DOCTYPE html>
 <html lang="en">
- <head>
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trabalho Redes-I 2023.1 MQTT</title>
@@ -8,146 +8,495 @@
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-  <body>
-    <div
-      id="carouselExampleIndicators"
-      class="carousel slide"
-      data-ride="carousel"
-    >
-      <ol class="container carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">Introdução</li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1">História</li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2">Definição</li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3">Exemplos</li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="4">Implementações</li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="5">Conclusão</li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="6">Referências</li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <a href="#intro"><img class="d-block w-100" src="image1.jpg" alt="First slide" /></a>
-        </div>
-        <div class="carousel-item">
-          <a href="#história"><img class="d-block w-100" src="image2.jpg" alt="Second slide" /></a>
-        </div>
-        <div class="carousel-item">
-          <a href="#definição"><img class="d-block w-100" src="image3.jpg" alt="Third slide" /></a>
-        </div>
-        <div class="carousel-item">
-          <a href="#exemplos"><img class="d-block w-100" src="image4.jpg" alt="Fouth slide" /></a>
-        </div>
-        <div class="carousel-item">
-          <a href="#implementações"><img class="d-block w-100" src="image5.jpg" alt="Fifth slide" /></a>
-        </div>
-        <div class="carousel-item">
-          <a href="#conclusão"><img class="d-block w-100" src="image6.jpg" alt="Sixth slide" /></a>
-        </div>
-        <div class="carousel-item">
-          <a href="#referências"><img class="d-block w-100" src="image7.jpg" alt="Seventh slide" /></a>
-        </div>
-      </div>
-      <a
-        class="carousel-control-prev"
-        href="#carouselExampleIndicators"
-        role="button"
-        data-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#carouselExampleIndicators"
-        role="button"
-        data-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+
+<body>
+  <!-- Navbar-->
+  <nav class="navbar sticky-top navbar-dark bg-dark navbar-expand-lg">
+    <a class="navbar-brand" href="#">MQTT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#intro">Introdução<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#história">Contexto Histórico</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#definição">Definição</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#exemplos">Casos de Uso</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#implementações">Implementação</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#conclusão">Conclusão</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#referências">Referências</a>
+        </li>
+      </ul>
     </div>
-    <div class="container orange md-3 justify-content-center">
-      <h1 class="jumbotron d-flex page-header">MQTT</h1>
-      <div id="intro">
-        <p class="lead blue md-5">
-          Introdução
+  </nav>
+  <!-- Carousel -->
+  <!---
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="container carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">Introdução</li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1">História</li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2">Definição</li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3">Exemplos</li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="4">Implementações</li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="5">Conclusão</li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="6">Referências</li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a href="#intro"><img class="d-block w-100" src="image1.jpg" alt="First slide" /></a>
+      </div>
+      <div class="carousel-item">
+        <a href="#história"><img class="d-block w-100" src="image2.jpg" alt="Second slide" /></a>
+      </div>
+      <div class="carousel-item">
+        <a href="#definição"><img class="d-block w-100" src="image3.jpg" alt="Third slide" /></a>
+      </div>
+      <div class="carousel-item">
+        <a href="#exemplos"><img class="d-block w-100" src="image4.jpg" alt="Fouth slide" /></a>
+      </div>
+      <div class="carousel-item">
+        <a href="#implementações"><img class="d-block w-100" src="image5.jpg" alt="Fifth slide" /></a>
+      </div>
+      <div class="carousel-item">
+        <a href="#conclusão"><img class="d-block w-100" src="image6.jpg" alt="Sixth slide" /></a>
+      </div>
+      <div class="carousel-item">
+        <a href="#referências"><img class="d-block w-100" src="image7.jpg" alt="Seventh slide" /></a>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  </div>-->
+  <!-- Content -->
+  <div class="container orange md-3 justify-content-center">
+    <h1 class="jumbotron d-flex page-header">MQTT</h1>
+    <div id="intro">
+      <h1 class="md-5">
+        Introdução
+      </h1>
+      <div class="panel">
+        <p>
+          Este artigo tem como objetivo um resumo bibliográfico, em forma de
+          website, do protocolo MQTT para a disciplina de Redes de Computadores
+          I ministrada pelo professor Luís Kowalski na Universidade Federal do
+          Rio de Janeiro. Ao longo das seções serão abordados assuntos inerentes
+          à tecnologia em questão, tal como: História, Objetivo, Propósitos,
+          desenvolvimentos e o projeções futuras. Além disso, será também
+          apresentado aplicações MQTT com a exibição prática de um dispositivo
+          que faz uso do protocolo. Por fim, cabe mencionar que as referências
+          bibliográficas neste artigo estarão dispostas na aba “fontes” do
+          website. O protocolo MQTT configura-se, de forma resumida, em um
+          protocolo de rede voltado para o uso de equipamentos IoT(Internet of
+          things - Internet das Coisas em tradução literal)[1], tendo aplicações
+          desde de o ramo petrolífero - em sensores de temperatura e medição de
+          tanques - até à vida rotineira como em casas inteligentes[2]. Por
+          esses fatores, define-se também como uma tecnologia eficiente e de
+          fácil implementação, visto as características intrínsecas ao
+          desenvolvimento dos Inventos IoT[3] - dispensar os “tecnicismos” e
+          prezar pela flexibilidade. Apesar de ser uma tecnologia considerada
+          antiga - não em termos de tempo em si, mas em razão da constante
+          mudança de eras tecnológicas -, o cerne do protocolo de comunicação
+          continua o mesmo. Contudo, diversas inovações surgiram, sendo a mais
+          significante residindo no fato de sua passagem de software privado
+          para uma técnica open-source, reafirmando e propagando, assim, seu
+          status como um dos padrões na transmissão de dados na Internet das
+          Coisas[3].</p>
+      </div>
+    </div>
+    <div id="história">
+      <h1 class="md-5">Contexto Histórico</h1>
+      <div class="panel">
+        <p>O protocolo MQTT(Transporte de Telemetria MQ em tradução livre) foi originalmente projetado para a “IoTzação”
+          – no tangível ao uso de sensores – de equipamentos na indústria de petróleo e gás, mais especificamente no
+          âmbito de monitoramento dos dutos de óleo. Desenvolvido por uma junção de funcionários da IBM(inclusive MQ
+          advém da linha de equipamentos IBM Message Queue Series) e EuroTech, o protocolo em questão foi proposto em
+          1999 utilizando redes TCP/IP, sendo, mais tarde, aprimorado para utilização de outros como MQTT sobre SSL/TSL
+          e MQTT sobre WebSockets[4].
+          Posteriormente a sua criação, o sistema passou por significativas mudanças seja pela padronização em
+          dispositivos IoT, seja pelo incremento de novas tecnologias. Quanto esta última, convém pontuar algumas como:
+          Em 2013, a versão 3.1 adicionou diversas especificações no uso de dispositivos sensores;
+          Entre 2014 e 2019, com o aumento da IoTização de equipamentos, diversos softwares e bibliotecas foram
+          desenvolvidos para dar suporte à tecnologia em questão, tendo suporte de várias plataformas e linguagens de
+          programação.
+        <div class="container">
+          <div class="text-center">
+            <img src="./Trabalho-Final/image9.png" style="width: 75%; height: auto;" alt="Descrição da imagem">
+            <figcaption class="figure-caption text-center">Figura 1 - Exemplo de Uso. Fonte:www.hivemq.com</figcaption>
+          </div>
+        </div>
         </p>
+      </div>
+    </div>
+    <div id="definição">
+      <h1 class="md-5">Definição</h1>
+      <div class="panel">
+        <p>A arquitetura MQTT funciona através do padrão “publisher-subscriber”(publicadores-subscritores) no qual, em
+          linhas gerais, o primeiro é responsável pelo envio da mensagem, ao passo que o segundo recebe. Além disso,
+          esses podem ser quaisquer dispositivos IoT, sensores ou, até mesmo, aplicações – são geralmente conhecidos
+          como clientes. Contudo, antes de adentrar nesses conceitos, convém definir alguns parâmetros de suma
+          importância para o entendimento do protocolo:
+        <ul class="custom-list">
+          <li>MQTT Broker: configura-se como o ator intermediário entre a comunicação dos publicadores e subscritores,
+            isto é,
+            recebendo o conteúdo e entregando-o.</li>
+          <ul class="custom-list">
+            <li>Filtro e roteamento de mensagens;</li>
+            <li>Controle de Sessões;</li>
+            <li>Controle de segurança(Autenticação e Autorização);</li>
+            <li>Responsável pela Escalabilidade, integração e monitoramento;
+            </li>
+          </ul>
+          <li>MQTT CLient: Ao contrário do Broker, o Client atua na ponta das redes como sistemas finais, seja como
+            publishers -- enviando os dados --, seja como subscribers -- recebendo e interpretando as mensagens ou
+            ambos.</li>
+          <li> Tópicos: utilizado para categorizar a mensagem – muitas entendido de forma hierárquica –, ou seja,
+            servindo
+            para organizar assuntos do MQTT.</li>
+        </ul>
+
+        </p>
+
+
+
+        <div class="container">
+          <div class="text-center">
+            <img src="./Trabalho-Final/image8.png" alt="Descrição da imagem">
+            <figcaption class="figure-caption text-center">Figura 2 - Funcionamento MQTT Broker. Fonte:https://www.bivocom.com/</figcaption>
+          </div>
+        </div>
+
+
+        <p>
+          Na imagem acima, o Broker seria responsável por assegurar a comunicação entre o dispositivo IoT com o sistema
+          final, sempre gerenciando a relação entre publicadores e subscritores. Ele faz isso verificando o tópico da
+          mensagem advinda do publisher e encaminhando para o subscriber do mesmo assunto.
+        </p>
+
+        <p>Continuamente, o MQTT funciona por intermédio de Pacotes de controles(Control Packet), dos quais são
+          essenciais para a comunicação entre os sistemas finais e o MQTT Broker, visto que carregam o formato da
+          mensagem. Existem diversos tipos de pacotes, cada um voltado a um propósito específico, sendo que os
+          principais são:
+        <ul>
+          <li> CONNECT: Utilizado pelo cliente para estabelecer a conexão, possuindo informações como o Identificador do
+            Cliente, Opções de Conexão e autenticação.</li>
+          <li> CONNACK: Define-se como a respostas a um CONNACK advindo de um cliente. Além disso, sempre retorna um
+            indicador de conexão.
+          </li>
+          <li> PUBLISH: Usado para enviar a mensagem de um cliente para o servidor(subscriber), possuindo campos como
+            tópico, nível de QoS.
+          </li>
+          <li> PUBACK: Tal como o CONNACK, é a confirmação do processamento de um PUBLISH com QoS 1.
+          </li>
+          <li> PUBREC: Confirmação do processamento de um PUBLISH com QoS 2.
+          </li>
+          <li> SUBSCRIBE: Utilizado pelo cliente para exigir tópicos, sempre especificando o QoS(default 0).
+          </li>
+          <li> SUBACK: Confirmação do processamento de um SUBSCRIBE.
+          </li>
+        </ul>
+
+        </p>
+        <div class="container">
+          <div class="text-center">
+            <img src="./Trabalho-Final/image10.gif" style="width: 75%; height: auto;" alt="Descrição da imagem">
+            <figcaption class="figure-caption text-center">Figura 3 - Funcionamento do Controle de Pacotes. Fonte:www.hivemq.com</figcaption>
+          </div>
+        </div>
+
+
+        <h2 class="md-5">Quality of Service</h2>
+        <p>
+          Outro conceito importante para o entendimento do protocolo MQTT seria os diferentes níveis de Qualidade de
+          Serviços(QoS), que são utilizados para a confiabilidade da entrega. Existem três níveis QoS:
+
+        <ul class="custom-list">
+          <li> QoS 0: Sendo o mais básico de todos, utiliza a técnica “Fire and forget”, isto é, a transmissão não
+            possui
+            nenhum tipo de verificação, enviada apenas uma vez. Cabe enfatizar que em caso de desconexão ou falha, o
+            pacote será totalmente perdido.</li>
+          <div class="container">
+            <div class="text-center">
+              <img src="./Trabalho-Final/image11.svg" style="width: 75%; height: auto;" alt="Descrição da imagem">
+              <figcaption class="figure-caption text-center">Figura 4 - Funcionamento QoS 0 . Fonte:www.hivemq.com</figcaption>
+            </div>
+          </div>
+          <li> QoS 1: Possui uma complexidade maior que o anterior, enviando a mensagem e verificando se essa foi
+            realmente
+            entregue. Ele faz isso por intermédio da espera de um “ACK”(PUBACK) por parte do cliente. Todavia, caso não
+            receba
+            essa confirmação, enviará a mensagem, tendo, dessa forma, duplicado o pacote.</li>
+          <div class="container">
+            <div class="text-center">
+              <img src="./Trabalho-Final/image12.svg" style="width: 75%; height: auto;" alt="Descrição da imagem">
+              <figcaption class="figure-caption text-center">Figura 5 - Funcionamento QoS 1. Fonte:www.hivemq.com</figcaption>
+            </div>
+          </div>
+          <li> QoS 2: Sendo o maior nível de Qualidade de Serviços no MQTT, este envia a mensagem uma única vez, porém
+            garante que a mesma será recebida. Ademais, os publishers e broker asseguram a confiabilidade da entrega
+            através do chamado “four-step handshake” que nada mais é do que um par de request-response.</li>
+            <div class="container">
+              <div class="text-center">
+                <img src="./Trabalho-Final/image30.svg" style="width: 75%; height: auto;" alt="Descrição da imagem">
+                <figcaption class="figure-caption text-center">Figura 6 - Funcionamento QoS 2. Fonte:www.hivemq.com</figcaption>
+              </div>
+            </div>
+        </ul>
+
+        </p>
+        </p>
+        <h2 class="md-5">Persistencia em MQTT</h2>
+        <p>Como já visto, o protocolo MQTT se fundamenta nos princípios da arquitetura TCP do qual possui, como
+          principal serviço, a confiabilidade de transmissão. Tendo esse paradigma em questão, o MQTT possui suporte em
+          persistência, garantindo que a mensagem não será perdida em casos de problemas na rede. Tal feito é possível
+          pelo fato do protocolo em tela armazenar as mensagens no servidor até chegarem ao subscriber.
+          Para essa configuração o MQTT possui três tipos de mensagem: Non-Persistent, Queued Persistent e Persistent
+          with acknowledgment. A primeira, estabelece-se como o padrão do protocolo onde todas as mensagens são perdidas
+          em caso de problemas na rede. Já a segunda, a mensagem ficará armazenada no servidor até sua entrega, ou seja,
+          fica contida numa fila até seu “chamamento”. Por fim, a Persistent with acknowledgment possui as mesmas
+          características da segunda, com exceção do fato que aguarda uma confirmação de entrega por parte do subscriber
+          – lembrando bastante a questão do Quality of Service(QoS).
+          Contudo, é justo enfatizar que tal tecnologia deve ser usada conforme a exigência do caso, haja visto que a
+          demanda por processamento e armazenamento crescerão a medida que houverem mais mensagens em persistência.
+        </p>
+        <h2 class="md-5">Estrutura do Pacote</h2>
+        <p>Para o entendimento do protocolo MQTT, é necessário olhar para a estrutura do pacote. Este é composto um
+          cabeçalho fixo(header) de 2 bytes, do qual o primeiro é responsável por caracterizar atributos da mensagem ao
+          lado de flags, ao passo que o segundo carrega a mensagem de fato.</p>
+        <div class="container">
+          <div class="text-center">
+            <img src="./Trabalho-Final/image20.PNG" style="width: 75%; height: auto;" alt="Descrição da imagem">
+            <figcaption class="figure-caption text-center">Figura 7 - Cabeçalho MQTT. Fonte:public.dhe.ibm.com</figcaption>
+          </div>
+        </div>
+        <p>Como é possível ver acima o byte 1 reserva 2 bits para o nível QoS (visto anteriormente), bem como os bits
+          4-7 para a o tipo da mensagem(descrito na seção Definição).
+          O bit 3 é usado como como uma flag para garantir uma maior confiabilidade de que a mensagem não foi duplicada
+          – daí sua sigla Duplicate Delivery –, caso haja problemas com os ACK(acknowledgment), contudo, só se aplicará
+          à mensagens cujo valor de QoS é diferente de 0 – caso contrário, “fire and forget” desse nível não faria
+          sentido. Desse modo, quando o MQTT Client envia uma mensagem para o MQTT Broker, o DUP será definido para 0,
+          todavia, se o Client não receber o ACK em um dado período de tempo, assumirá que o pacote não foi enviado
+          propriamente para o destinatário final, retransmitindo, assim o mesmo pacote, mas com DUP configurado em 1
+          (indicando que o pacote tinha sido enviado).
+          Já o campo “RETAIN”(bit 0), é utilizado para o controle de retenção no broker e do comportamento dos
+          subscribers quando conectados a um tópico. Além disso, com esse campo, os clientes podem acessar informações
+          mesmo que eles não estejam conectados no instante da publicação(publish) do pacote. Dessa maneira, quando for
+          “1”, o broker armazenará a mensagem e irá descartar a que estava anteriormente guardada.
+          Por fim, o byte 2 é reservado exclusivamente para o “remaining length”, no qual é, em linhas gerais, utilizado
+          para determinar o tamanho do variable header(cabeçalho variável) – representado pelos primeiros 7 bits – e o
+          payload, otimizando, portanto, o tamanho da mensagem. Tanto o variable header quanto o payload possuem
+          informações adicionais que estão em função dos pacotes de controles mencionados anteriormente, por exemplo, se
+          o cliente enviar uma mensagem para um servidor(PUBLISH), o variable header terá atributos como o identificador
+          da mensagem, enquanto o payload conterá os dados do tópico enviado(published).
+        </p>
+        <div class="container">
+          <div class="text-center">
+            <img src="./Trabalho-Final/image31.jpeg" style="width: 75%; height: auto;" alt="Descrição da imagem">
+            <figcaption class="figure-caption text-center">Figura 8 - Cabeçalho MQTT. Fonte:www.steves-internet-guide.com</figcaption>
+          </div>
+        </div>
+
+      </div>
+      <hr class="my-4">
+      <div id="exemplos">
+        <h2 class="blue md-5">Casos de Uso</h2>
         <div class="panel">
           <p>
-            Este artigo tem como objetivo um resumo bibliográfico, em forma de
-            website, do protocolo MQTT para a disciplina de Redes de Computadores
-            I ministrada pelo professor Luís Kowalski na Universidade Federal do
-            Rio de Janeiro. Ao longo das seções serão abordados assuntos inerentes
-            à tecnologia em questão, tal como: História, Objetivo, Propósitos,
-            desenvolvimentos e o projeções futuras. Além disso, será também
-            apresentado aplicações MQTT com a exibição prática de um dispositivo
-            que faz uso do protocolo. Por fim, cabe mencionar que as referências
-            bibliográficas neste artigo estarão dispostas na aba “fontes” do
-            website. O protocolo MQTT configura-se, de forma resumida, em um
-            protocolo de rede voltado para o uso de equipamentos IoT(Internet of
-            things - Internet das Coisas em tradução literal)[1], tendo aplicações
-            desde de o ramo petrolífero - em sensores de temperatura e medição de
-            tanques - até à vida rotineira como em casas inteligentes[2]. Por
-            esses fatores, define-se também como uma tecnologia eficiente e de
-            fácil implementação, visto as características intrínsecas ao
-            desenvolvimento dos Inventos IoT[3] - dispensar os “tecnicismos” e
-            prezar pela flexibilidade. Apesar de ser uma tecnologia considerada
-            antiga - não em termos de tempo em si, mas em razão da constante
-            mudança de eras tecnológicas -, o cerne do protocolo de comunicação
-            continua o mesmo. Contudo, diversas inovações surgiram, sendo a mais
-            significante residindo no fato de sua passagem de software privado
-            para uma técnica open-source, reafirmando e propagando, assim, seu
-            status como um dos padrões na transmissão de dados na Internet das
-            Coisas[3].</p>
+            Internet da Coisas: O protocolo MQTT é usado em aplicacoes IoT para
+            conectar dispositivos tais como sensores, broker e servidores. Por
+            exemplo, um sistema de monitoramento hospitalar que coleta dados de
+            temperatura, umidade, concentracao de gases, dados RFID, etc. MQTT
+            eh usado para enviar os dados para o broker e o broker envia para o
+            servidor. O servidor pode ser usado para analisar os dados e tomar
+            decisoes. MQTT é usado em aplicacoes IoT para conectar dispositivos
+            tais como sensores, broker e servidores. Por exemplo, um sistema de
+            monitoramento hospitalar que coleta dados de temperatura, umidade,
+            concentracao de gases, etc. MQTT eh usado para enviar os dados para
+            o broker por meio de um SBC (ESP32, Raspberry Pi, por exemplo) e o
+            servidor requisita os dados ao broker.
+          </p>
+          <p>
+            Indústria Automotiva: MQTT está se tornando o padrao de comunicação
+            para carros conectados. Serviço de compartilhamento da BMW
+            (DriveNow), SiriusXM da Ford usa HiveMQ. Inicialmente HTTP era
+            usado, mas MQTT é mais adequado para este caso de uso. Por exemplo,
+            quando o carro está em uma regiao sem sinal o MQTT pode armazenar as
+            mensagens e enviar quando o sinal voltar.
+          </p>
+          <p>
+            Aplicações Mobile: Facebook Messenger e Instagram sao exemplos de
+            aplicacoes que usam MQTT para enviar mensagens em chats. Instagram
+            usa MQTT para enviar notifcacoes. No geral, MQTT é usado em
+            aplicações que precisam de uma persistencia de mensagens consumindo
+            uma baixa largura de banda.
+          </p>
         </div>
       </div>
-      <div id="história">
-        <p class="lead">Contexto Histórico</p>
-        <div class="panel">
-          <p>MQQT foi pensado para monitorar oleodutos.</p>
-        </div>
-      </div>
-      <div id="definição">
-        <p class="lead">Definição</p>
-        <div class="panel">
-          <p>É um protocolo Brooker-Subscriber.</p>
-        </div>
-      </div>
-      <div id="exemplos">
-        <p class="lead">Exemplos Praticos</p>
-        <div class="panel">
-          <p>Exemplos de USO</p>
-        </div>
-      </div>
+      <hr class="my-4">
       <div id="implementações">
-        <p class="lead">Implementações</p>
+        <h2 class="blue md-5">Exemplo de Implementação</h2>
         <div class="panel">
-          <p>Implementação dos colegas de ECA.</p>
+          <p>No Laboratório de Engenharia de Software (LENS), sob orientação do prof C. Miceli, alguns alunos
+            ficaram responsáeis por um projeto de monitoramento e tomada de dados de alguns sensores como de
+            temperatura, luminosidade e CO2. A parte aqui citada corresponde à parte do aluno Matheus Gomes Rocha de
+            Engenharia de Controle e Automação que ficou responsável pela tomada de dados de CO2 dentro do laboratório.
+          </p>
+          <p>
+            Como descrito nos tópicos anteriores os elementos chave publisher-broker-subscriber são implementados
+            com uma série de hardwares e softwares específicos e o fluxo de dados é unidirecional, portanto cada
+            dispositivo atua apenas de uma forma:
+          </p>
+          <ul>
+            <li>
+              <h3>Publisher</h3>
+              <p>Um sensor MQ-135 toma dados continuamente que são lidos por um dispositivo ESP8266
+                que publica periodicamente (a cada 2 segundos) uma mensagem MQQT no contexto "lens/CO2"
+                com o conteúdo de valor de gás medido e timestamp.
+              </p>
+            </li>
+            <li>
+              <h3>Brooker</h3>
+              <p>O brooker escolhido foi o Mosquitto rodando em um RaspberryPi, que também recebe mensagens de outros
+                publishers com outros sensores acoplados, no caso no próprio raspberry os dados são armazenados num
+                banco de dados
+                não relacional, semdo assim outro software no mesmo hardware o subscriber desse fluxo.
+              </p>
+            </li>
+            <li>
+              <h3>Subscriber</h3>
+              <p>Os dados são persistidos localmente com uma api em Python num MongoDB, processados e enviados (com uma
+                frequência menor: 1 hora) em "levas" para um servidor que faz a persistência
+                de longo prazo em outro banco de dados relacional e então esses dados são descartados no Raspberry.
+              </p>
+            </li>
+            <p>Nota: Apenas o fluxo do sensor ao brooker está de fato implementado e essa é a parte do aluno
+              referido.[9]</p>
+          </ul>
+
+          </p>
         </div>
       </div>
+      <hr class="my-4">
       <div id="conclusão">
-        <p class="lead">Conclusão</p>
+        <h2 class="blue md-5">Conclusão</h2>
         <div class="panel">
-          <p>MQQT é muitom bom nessas condições.</p>
+          <p>É perceptível após as explicações acima que apesar de seus quase 25 anos de existência(em 2023 25 anos é um
+            tempo
+            considerável para uma tecnologia web) o MQTT tem seu próprio nicho de aplicações seja pelo baixo consumo de
+            energia e memória
+            pelo cabeçalho reduzido em relação ao HTTP, seja pela capacidade de persistir dados em tráfego por existir a
+            figura
+            de um broker no fluxo ou ainda por ser um protocolo simples, mas com grande flexibilidade.
+          </p>
+          <p>
+            Também é possível perceber através dos exemplos dados que assim como os outros protocolos de comunicação e
+            controle
+            o MQTT é um dos módulos que constroem sistemas mais complexos e esses módulos são facilmente domináveis por
+            profissionais de início de carreira ou estuantes podendo a quem arquiteta esses sistemas delegar a outros a
+            implementação
+            de partes mais básicas do projeto.
+          </p>
+          <p>
+            Vale ressaltar também que apesar de sua longevidade não existe "bala de prata" na tecnologia e o MQTT não
+            pode ser usado
+            em toda aplicação ou vai ser a melhor opção em todo caso de transmissão de dados, cabendo ao responsável
+            saber quando utilizá-lo
+            ou não. E também nada garante a eternidade do MQTT, pois múltiplos protocolos e aplicações são desenvolvidos
+            a todo momento e podem porventura
+            substituir os protocolos mais utilizados na atualidade.
+          </p>
+          <p>
+            Dito isto MQTT ainda permanece como um dos protocolos mais utilizados e constantemente novas aplicações com
+            ele
+            são desenvolvidas sem algum competidor à altura para toda gama de projetos em que é utilizado.
+          </p>
         </div>
       </div>
+      <hr class="my-4">
       <div id="referências">
-        <p class="lead">Referências</p>
+        <h2 class="blue md-5">Referências</h2>
         <div class="panel">
-          <p>1. Página inicial do MQTT. Disponível em: <a href="https://mqtt.org/getting-started/">https://mqtt.org/getting-started/</a>.<br>
-            2. Essenciais do MQTT. Disponível em: <a href="https://www.hivemq.com/mqtt-essentials/">https://www.hivemq.com/mqtt-essentials/</a>.<br>
-            3. Mishra, B.; Kertesz, A. "The Use of MQTT in M2M and IoT Systems: A Survey". In: IEEE (Ed.). IEEE Xplore Digital Library, 2020. DOI: <a href="https://doi.org/10.1109/ACCESS.2020.3030625">10.1109/ACCESS.2020.3030625</a>.<br>
-            4. Thangavel, D.; Ma, X.; Valera, A.; Tan, H.-X.; Tan, C. K.-Y. "Performance evaluation of MQTT and CoAP via a common middleware". In: IEEE (Ed.). IEEE Xplore Digital Library, 2014. DOI: <a href="https://doi.org/10.1109/ICII.2014.7036789">10.1109/ICII.2014.7036789</a>.<br>
-            5. Hillar, G. C. <i>MQTT Essentials - A Lightweight IoT Protocol</i>. Editora: Packt Publishing Ltd, 2017. ISBN: 978-1-78712-563-3.<br>
-            6. Aplicação do protocolo MQTT na indústria de petróleo e gás. Disponível em: <a href="https://www.emqx.com/en/blog/application-of-mqtt-protocol-in-oil-and-gas-industry/">https://www.emqx.com/en/blog/application-of-mqtt-protocol-in-oil-and-gas-industry/</a>.<br>
-            7. Comunicando-se com MQTT. Disponível em: <a href="https://www.ibm.com/docs/en/mapms/1_cloud?topic=applications-communicating-mqtt">https://www.ibm.com/docs/en/mapms/1_cloud?topic=applications-communicating-mqtt</a>.
-            </p> 
+          <p>
+            1. Página inicial do MQTT. Disponível em:
+            <a href="https://mqtt.org/getting-started/">https://mqtt.org/getting-started/</a>.<br />
+            2. Essenciais do MQTT. Disponível em:
+            <a href="https://www.hivemq.com/mqtt-essentials/">https://www.hivemq.com/mqtt-essentials/</a>.<br />
+            3. Mishra, B.; Kertesz, A. "The Use of MQTT in M2M and IoT Systems:
+            A Survey". In: IEEE (Ed.). IEEE Xplore Digital Library, 2020. DOI:
+            <a href="https://doi.org/10.1109/ACCESS.2020.3030625">10.1109/ACCESS.2020.3030625</a>.<br />
+            4. Thangavel, D.; Ma, X.; Valera, A.; Tan, H.-X.; Tan, C. K.-Y.
+            "Performance evaluation of MQTT and CoAP via a common middleware".
+            In: IEEE (Ed.). IEEE Xplore Digital Library, 2014. DOI:
+            <a href="https://doi.org/10.1109/ICII.2014.7036789">10.1109/ICII.2014.7036789</a>.<br />
+            5. Hillar, G. C.
+            <i>MQTT Essentials - A Lightweight IoT Protocol</i>. Editora: Packt
+            Publishing Ltd, 2017. ISBN: 978-1-78712-563-3.<br />
+            6. Aplicação do protocolo MQTT na indústria de petróleo e gás.
+            Disponível em:
+            <a
+              href="https://www.emqx.com/en/blog/application-of-mqtt-protocol-in-oil-and-gas-industry/">https://www.emqx.com/en/blog/application-of-mqtt-protocol-in-oil-and-gas-industry/</a>.<br />
+            7. Comunicando-se com MQTT. Disponível em:
+            <a
+              href="https://www.ibm.com/docs/en/mapms/1_cloud?topic=applications-communicating-mqtt">https://www.ibm.com/docs/en/mapms/1_cloud?topic=applications-communicating-mqtt</a>.<br>
+            8. EXPLICAR REFERENCIA - <a> https://www.influxdata.com/blog/mqtt-use-cases/ </a>
+            <br>
+            9. <a href="https://github.com/MattiyyahG/Relatorio_CO2_Sensor">Implementação em um projeto real na UFRJ</a>
+          </p>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Footer -->
+<div class="jumbotron jumbotron-fluid bg-dark text-light">
+  <div class="container content">
+    <p>Redes de Computadores I - EEL878 - 2023.1</p>
+    <p>Escola Politecnica da Universidade Federal do Rio de Janeiro</p>
+    <p>
+      Alunos: Gabriel, Leonardo e Lucas
+    </p>
+    <p>"Este trabalho foi totalmente produzido pelos autores que declaram não terem violado os direitos autorais de
+      terceiros, sejam eles pessoas físicas ou jurídicas. Havendo textos, tabelas e figuras transcritos de obras de
+      terceiros com direitos autorais protegidos ou de domínio público tal como idéias e conceitos de terceiros, mesmo
+      que sejam encontrados na Internet, os mesmos estão com os devidos créditos aos autores originais e estão incluídas
+      apenas com o intuito de deixar o trabalho autocontido. O(s) autor(es) tem(êm) ciência dos Artigos 297 a 299 do
+      Código Penal Brasileiro e também que o uso do artifício de copiar/colar texto de outras fontes e outras formas de
+      plágio é um ato ilícito, condenável e passível de punição severa. No contexto da Universidade a punição não
+      precisa se restringir à reprovação na disciplina e pode gerar um processo disciplinar que pode levar o(s) aluno(s)
+      à suspensão;"</p>
+  </div>
+</div>
+</body>
+
 </html>
