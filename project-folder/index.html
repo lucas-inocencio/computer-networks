@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+
+<head>
+  <title>Redes de Computadores II</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="default.css" media="screen" />
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title"> <span class="sitename"> <a href="#">Protocolos de Roteamento em DTN</a></span>
+          <div class="slogan">EEL879 - Redes de Computadores II</div>
+        </div>
+      </div>
+      <div class="path"> <a href="#">Home</a> </div>
+      <div class="main">
+        <div class="content">
+          <h1>História</h1>
+          <div class="descr">Final da década de 1990</div>
+          <p>Redes tolerantes a atraso (DTN) é uma arquitetura de redes de computadores que visa os problemas técnicos
+            em redes heterogêneas nas quais pode haver falta de conectividade de rede contínua (queda de internet).
+            Exemplos de tais redes são as redes móveis, ou de ambientes extremos (guerras, resgates, acidentes, etc.),
+            ou redes planejadas no espaço.</p>
+          <blockquote>
+            <p>Nos anos 70, empolgados com a miniaturização da computação, pesquisadores começaram a desenvolver
+              tecnologia para roteamento entre localizações não-fixas de computadores. Enquanto o campo do roteamento
+              ad-hoc estava inativo através dos anos 80, o uso abrangente de protocolos wireless revigorou a área nos
+              anos 90, enquanto as MANETs e as Vehicular Ad-Hoc Networking foram se tornando áreas de interesse
+              crescente.</p>
+          </blockquote>
+          <h1>Spray and Wait Rounting Protocol</h1>
+          <p>O protocolo foi proposto com a finalidade de controlar o nível de difusão das mensagens através da rede.
+            Assim como o protocolo de roteamento epidêmico, o protocolo de disparada e espera não necessita de
+            conhecimento prévio da topologia da rede ou do padrão de mobilidade dos nós. Ele simplesmente encaminha
+            múltiplas cópias da mensagem recebida utilizando inundação. A diferença entre disparada e espera e o
+            roteamento epidêmico é que aquele difunde apenas L cópias da mensagem. Foi provado que o nível mínimo de L
+            para se obter o atraso esperado para a entrega da mensagem depende do número de nós na rede e não do tamanho
+            da rede e seu alcance de transmissão.</p>
+          <p>protocolo. </p>
+
+          <h1>Epidemic Routing Protocol</h1>
+          <p>Primeiro protocolo de roteamento em redes DTN. Possui um algoritmo de roteamento baseado em inundação. Os
+            principais objetivos do roteamento epidêmico são: 1) Maximizar a taxa de entrega das mensagens, 2) Minimizar
+            a latência das mensagens e 3) Minimizar os recursos totais consumidos para entrega das mensagens. Neste
+            esquema de roteamento, o nó que recebe a mensagem encaminha uma cópia para cada outro nó que encontra. Então
+            a mensagem é difundida na rede por nós móveis até que todos os nós tenham os mesmos dados, embora não haja
+            garantia de entrega das mensagens. Tal algoritmo seria análogo a um melhor-esforço para alcançar o destino.
+            Cada mensagem e seu identificador único são armazenados no buffer dos nós, e a sua lista é chamada de vetor
+            de sumário. Quando nós adjacentes se encontram, trocam e comparam seus vetores de sumário para identificar
+            quais mensagens não possuem e requisitá-las. O esquema é apresentado na figura 1.</p>
+
+          <h1>PROPHET - Probabilistic ROuting Protocol using History of Encounter and Transitivity</h1>
+          <p>O protocolo PROPHET parte do pressuposto básico de que a mobilidade do nó não é aleatória, mas que possui
+            um comportamento repetitivo. No esquema do protocolo, é assumido que os nós tendem a passar mais vezes por
+            alguns locais do que em outros, isto é, se um nó visitou muitas vezes uma determinada localidade, então há
+            grande probabilidade de que a visite novamente. Sendo assim, um resultado plausível é o de que nós que se
+            encontraram anteriormente estão sujeitos a se encontrar novamente. O procolo PROPHET foi proposto para
+            aumentar a probabilidade de entrega e reduzir o gasto de recursos de rede no protocolo de roteamento
+            epidêmico.</p>
+
+          <h1>Conclusão</h1>
+          <p>anything</p>
+          
+          <h1>Perguntas</h1>
+          <h2>1. how</h2>
+        </div>
+        <div class="navigation">
+          <h2>Redirecionar</h2>
+          <ul>
+            <li><a href="#">protocol</a></li>
+            <li><a href="#">protocol</a></li>
+            <li><a href="#">protocol</a></li>
+            <li><a href="#">protocol</a></li>
+          </ul>
+        </div>
+        <div class="clearer">&nbsp;</div>
+      </div>
+      <div class="footer"> <span class="left"> &copy; 2023 <a href="#">UFRJ</a></span> <span class="right"><a href="http://arcsin.se"></a> </span>
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
