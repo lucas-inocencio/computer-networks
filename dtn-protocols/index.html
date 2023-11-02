@@ -13,6 +13,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
   </head>
+
   <body id="page-top">
     <!-- Navigation-->
     <nav
@@ -20,7 +21,9 @@
       id="mainNav"
     >
       <div class="container px-4">
-        <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand" href="#page-top"
+          >Protocolos de Roteamento DTN</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -51,10 +54,8 @@
     <header class="bg-primary bg-gradient text-white">
       <div class="container px-4 text-center">
         <h1 class="fw-bolder">Protocolos de Roteamento para DTN</h1>
-        <p class="lead">
-          A functional Bootstrap 5 boilerplate for one page scrolling websites
-        </p>
-        <a class="btn btn-lg btn-light" href="#about">Start scrolling!</a>
+        <p class="lead">Redes de Computadores II - UFRJ</p>
+        <a class="btn btn-lg btn-light" href="#about">Iniciar</a>
       </div>
     </header>
     <!-- About section-->
@@ -62,24 +63,29 @@
       <div class="container px-4">
         <div class="row gx-4 justify-content-center">
           <div class="col-lg-8">
-            <h2>História</h2>
+            <h2>Contexto Histórico</h2>
             <p class="lead">
-              Redes tolerantes a atraso (DTN) é uma arquitetura de redes de
-              computadores que visa os problemas técnicos em redes heterogêneas
-              nas quais pode haver falta de conectividade de rede contínua
-              (queda de internet). Exemplos de tais redes são as redes móveis,
-              ou de ambientes extremos (guerras, resgates, acidentes, etc.), ou
-              redes planejadas no espaço.
-            </p>
-
-            <p class="lead">
-              Nos anos 70, empolgados com a miniaturização da computação,
-              pesquisadores começaram a desenvolver tecnologia para roteamento
-              entre localizações não-fixas de computadores. Enquanto o campo do
-              roteamento ad-hoc estava inativo através dos anos 80, o uso
-              abrangente de protocolos wireless revigorou a área nos anos 90,
-              enquanto as MANETs e as Vehicular Ad-Hoc Networking foram se
-              tornando áreas de interesse crescente.
+              A pesquisa começou como projetos financiados pelo governo dos
+              Estados Unidos relacionados à necessidade de tecnologias de rede
+              que pudessem suportar os atrasos significativos e a corrupção de
+              pacotes em viagens espaciais. Inicialmente, esses projetos visavam
+              apenas a comunicação de curto alcance entre missões tripuladas à
+              lua, mas o campo logo se expandiu em um subcampo completo de Redes
+              de Telecomunicações Disruptivas (DTNs), que criaram avanços
+              tecnológicos para permitir a Internet Interplanetária. Na década
+              de 1970, os pesquisadores começaram a desenvolver tecnologia para
+              roteamento entre computadores em locais não fixos. O uso
+              generalizado de protocolos sem fio na década de 1990 reacendeu o
+              interesse na área, com foco em roteamento ad hoc móvel e redes ad
+              hoc veiculares. Na década de 2000, o crescente interesse em
+              roteamento ad hoc móvel e a crescente complexidade da Internet
+              Interplanetária levaram ao surgimento de um grande número de
+              conferências acadêmicas sobre DTNs. Nesse campo, muitas
+              otimizações foram feitas em algoritmos clássicos de roteamento ad
+              hoc e tolerante a atrasos, e questões como segurança,
+              confiabilidade, verificabilidade e outras áreas de pesquisa bem
+              compreendidas em redes de computadores tradicionais começaram a
+              ser examinadas.
             </p>
           </div>
         </div>
@@ -113,24 +119,40 @@
       <div class="container px-4">
         <div class="row gx-4 justify-content-center">
           <div class="col-lg-8">
-            <h2>Epidemic Routing Protocol</h2>
+            <h2>Epidemic Routing Protocol(#Alterado)</h2>
             <p class="lead">
-              Primeiro protocolo de roteamento em redes DTN. Possui um algoritmo
-              de roteamento baseado em inundação. Os principais objetivos do
-              roteamento epidêmico são: 1) Maximizar a taxa de entrega das
-              mensagens, 2) Minimizar a latência das mensagens e 3) Minimizar os
-              recursos totais consumidos para entrega das mensagens. Neste
-              esquema de roteamento, o nó que recebe a mensagem encaminha uma
-              cópia para cada outro nó que encontra. Então a mensagem é
-              difundida na rede por nós móveis até que todos os nós tenham os
-              mesmos dados, embora não haja garantia de entrega das mensagens.
-              Tal algoritmo seria análogo a um melhor-esforço para alcançar o
-              destino. Cada mensagem e seu identificador único são armazenados
-              no buffer dos nós, e a sua lista é chamada de vetor de sumário.
-              Quando nós adjacentes se encontram, trocam e comparam seus vetores
-              de sumário para identificar quais mensagens não possuem e
-              requisitá-las. O esquema é apresentado na figura 1.
+              Epidemic Routing Protocol configura-se como um protocolo baseado
+              em encaminhamento por inundação - o que se significa que todos os
+              nós realiza a difusão(broadcast) das mensagens para todos os
+              vizinhos -, visando minimizar o uso de recursos, reduzir a
+              latência da arquitetura DTN e aumentar a taxa de entrega[1]. A
+              tecnologia em questão funciona da seguinte maneira:
             </p>
+
+            <ol>
+              <li>
+                Supondo uma nó(N0) qualquer, este irá enviar as mensagens
+                armazenadas para os nós adjacentes;
+              </li>
+              <li>
+                Os vizinhos de N0 receberem a informação, verificam se essa está
+                na memória. Caso não esteja, o nós vizinhos encaminhará para
+                todos seus adjacentes(com exceção de N) através de broadcast.
+                Sendo esse processo repetido até o pacote chegar no destino.
+              </li>
+
+              <img
+                src="epidemic.png"
+                alt="A beautiful sunset over the mountains"
+              />
+            </ol>
+
+            Observa-se que esse protocolo é do tipo “melhor-esforço”
+            (best-effort) e, com isso, existe um alto uso da memória, energia e
+            banda da rede - muitas vezes causando congestionamentos devido a
+            inundação. Diante disso, o ERP deve ser usado apenas quando não há
+            outra alternativa de tecnologia ou quando não se conhece muito bem a
+            topologia da rede.
           </div>
         </div>
       </div>
