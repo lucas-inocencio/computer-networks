@@ -1,253 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>
-      Protocolos de Roteamento para DTN
-    </title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-  </head>
 
-  <body id="page-top">
-    <!-- Navigation-->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
-      id="mainNav"
-    >
-      <div class="container px-4">
-        <a class="navbar-brand" href="#page-top"
-          >Protocolos de Roteamento para DTN</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#introducao">Introdução</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#historia">História</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#autoria">Autoria</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- Header-->
-    <header class="bg-primary bg-gradient text-white">
-      <div class="container px-4 text-center">
-        <h1 class="fw-bolder">Protocolos de Roteamento para Redes Tolerantes a Atrasos e Desconexões</h1>
-        <p class="lead">Redes de Computadores II - UFRJ</p>
-      </div>
-    </header>
-    <!-- About section-->
-    <section id="introducao">
-      <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-          <div class="col-lg-8">
-            <h2>Introdução</h2>
-            <p class="lead">
-              Com a evolução das viagens espaciais e consequente necessidade de
-              comunicação, a humanidade se deparou com um grande desafio nesse
-              campo: as tecnologias convencionais em redes não eram apropriadas
-              para transmissão de informações no espaço. Uma das principais
-              barreiras dessa problemática é o atraso na troca de pacotes entre
-              as estações. Assim, surgiu as Redes Tolerantes a Atrasos (em
-              Inglês DTN - <em>Delay/Disruption Tolerant Networking<em>) a fim de
-              estabelecer um sistema adequado para essa situação. O foco deste
-              trabalho será demonstrar os tipos, princípios e aspectos do
-              funcionamento dos protocolos de roteamento em DTN, tais como:
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>
+    Protocolos de Roteamento para DTN
+  </title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
 
-              <l>
-                <li>Protocolo de Roteamento Epidêmico</li>
-                <li>Protocolo de Roteamento Pulverizar e Esperar (SWRP)</li>
-                <li>
-                  Protocolo de Roteamento Probabilístico usando Histórico de
-                  Encontros e Transitividade (PROPHET)
-                </li>
-              </l>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="historia">
-      <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-          <div class="col-lg-8">
-            <h2>Contexto Histórico</h2>
-            <p class="lead">
-              A pesquisa começou como projetos financiados pelo governo dos
-              Estados Unidos relacionados à necessidade de tecnologias de rede
-              que pudessem suportar os atrasos significativos e a corrupção de
-              pacotes em viagens espaciais. Inicialmente, esses projetos visavam
-              apenas a comunicação de curto alcance entre missões tripuladas à
-              lua, mas o campo logo se expandiu em um subcampo completo de Redes
-              de Telecomunicações Disruptivas (DTNs), que criaram avanços
-              tecnológicos para permitir a Internet Interplanetária. Na década
-              de 1970, os pesquisadores começaram a desenvolver tecnologia para
-              roteamento entre computadores em locais não fixos. O uso
-              generalizado de protocolos sem fio na década de 1990 reacendeu o
-              interesse na área, com foco em roteamento ad hoc móvel e redes ad
-              hoc veiculares. Na década de 2000, o crescente interesse em
-              roteamento ad hoc móvel e a crescente complexidade da Internet
-              Interplanetária levaram ao surgimento de um grande número de
-              conferências acadêmicas sobre DTNs. Nesse campo, muitas
-              otimizações foram feitas em algoritmos clássicos de roteamento ad
-              hoc e tolerante a atrasos, e questões como segurança,
-              confiabilidade, verificabilidade e outras áreas de pesquisa bem
-              compreendidas em redes de computadores tradicionais começaram a
-              ser examinadas.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Services section-->
-    <section class="bg-light" id="services">
-      <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-          <div class="col-lg-8">
-            <h2>Spray and Wait Rounting Protocol</h2>
-            <p class="lead">
-              O protocolo foi proposto com a finalidade de controlar o nível de
-              difusão das mensagens através da rede. Assim como o protocolo de
-              roteamento epidêmico, o protocolo de disparada e espera não
-              necessita de conhecimento prévio da topologia da rede ou do padrão
-              de mobilidade dos nós. Ele simplesmente encaminha múltiplas cópias
-              da mensagem recebida utilizando inundação. A diferença entre
-              disparada e espera e o roteamento epidêmico é que aquele difunde
-              apenas L cópias da mensagem. Foi provado que o nível mínimo de L
-              para se obter o atraso esperado para a entrega da mensagem depende
-              do número de nós na rede e não do tamanho da rede e seu alcance de
-              transmissão.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Contact section-->
-    <section id="contact">
-      <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-          <div class="col-lg-8">
-            <h2>Epidemic Routing Protocol(#Alterado)</h2>
-            <p class="lead">
-              Epidemic Routing Protocol configura-se como um protocolo baseado
-              em encaminhamento por inundação - o que se significa que todos os
-              nós realiza a difusão(broadcast) das mensagens para todos os
-              vizinhos -, visando minimizar o uso de recursos, reduzir a
-              latência da arquitetura DTN e aumentar a taxa de entrega[1]. A
-              tecnologia em questão funciona da seguinte maneira:
-            </p>
-
-            <ol>
-              <li>
-                Supondo uma nó(N0) qualquer, este irá enviar as mensagens
-                armazenadas para os nós adjacentes;
-              </li>
-              <li>
-                Os vizinhos de N0 receberem a informação, verificam se essa está
-                na memória. Caso não esteja, o nós vizinhos encaminhará para
-                todos seus adjacentes(com exceção de N) através de broadcast.
-                Sendo esse processo repetido até o pacote chegar no destino.
-              </li>
-
-              <img
-                src="epidemic.png"
-                alt="A beautiful sunset over the mountains"
-              />
-            </ol>
-
-            Observa-se que esse protocolo é do tipo “melhor-esforço”
-            (best-effort) e, com isso, existe um alto uso da memória, energia e
-            banda da rede - muitas vezes causando congestionamentos devido a
-            inundação. Diante disso, o ERP deve ser usado apenas quando não há
-            outra alternativa de tecnologia ou quando não se conhece muito bem a
-            topologia da rede.
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="PROPHET">
-      <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-          <div class="col-lg-8">
-            <h2>
-              PROPHET - Probabilistic ROuting Protocol using History of
-              Encounter and Transitivity
-            </h2>
-            <p class="lead">
-              O protocolo PROPHET parte do pressuposto básico de que a
-              mobilidade do nó não é aleatória, mas que possui um comportamento
-              repetitivo. No esquema do protocolo, é assumido que os nós tendem
-              a passar mais vezes por alguns locais do que em outros, isto é, se
-              um nó visitou muitas vezes uma determinada localidade, então há
-              grande probabilidade de que a visite novamente. Sendo assim, um
-              resultado plausível é o de que nós que se encontraram
-              anteriormente estão sujeitos a se encontrar novamente. O procolo
-              PROPHET foi proposto para aumentar a probabilidade de entrega e
-              reduzir o gasto de recursos de rede no protocolo de roteamento
-              epidêmico.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Footer-->
-    <footer class="py-5 bg-dark">
-      <div class="container px-4">
-        <p class="m-0 text-center text-white">
-          Copyright &copy; Your Website 2023
-        </p>
-      </div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <script src="./bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-
-    <div class="jumbotron jumbotron-fluid bg-dark text-light" id="autoria">
-      <div class="container content">
-        <p>Redes de Computadores II - EEL879 - 2023.2</p>
-        <p>Escola Politecnica da Universidade Federal do Rio de Janeiro</p>
-        <p>Alunos: Gabriel Souza, Lucas Inocencio e Victor Assis</p>
-        <p>
-          "Este trabalho foi totalmente produzido pelos autores que declaram não
-          terem violado os direitos autorais de terceiros, sejam eles pessoas
-          físicas ou jurídicas. Havendo textos, tabelas e figuras transcritos de
-          obras de terceiros com direitos autorais protegidos ou de domínio
-          público tal como idéias e conceitos de terceiros, mesmo que sejam
-          encontrados na Internet, os mesmos estão com os devidos créditos aos
-          autores originais e estão incluídas apenas com o intuito de deixar o
-          trabalho autocontido. O(s) autor(es) tem(êm) ciência dos Artigos 297 a
-          299 do Código Penal Brasileiro e também que o uso do artifício de
-          copiar/colar texto de outras fontes e outras formas de plágio é um ato
-          ilícito, condenável e passível de punição severa. No contexto da
-          Universidade a punição não precisa se restringir à reprovação na
-          disciplina e pode gerar um processo disciplinar que pode levar o(s)
-          aluno(s) à suspensão;"
-        </p>
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container px-4">
+      <a class="navbar-brand" href="#page-top">Protocolos de Roteamento para DTN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#introducao">Introdução</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#historia">História</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#autoria">Autoria</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </body>
+  </nav>
+  <!-- Header-->
+  <header class="bg-primary bg-gradient text-white">
+    <div class="container px-4 text-center">
+      <h1 class="fw-bolder">Protocolos de Roteamento para Redes Tolerantes a Atrasos e Desconexões</h1>
+      <p class="lead">Redes de Computadores II - UFRJ</p>
+    </div>
+  </header>
+  <!-- About section-->
+  <section id="introducao">
+    <div class="container px-4">
+      <div class="row gx-4 justify-content-center">
+        <div class="col-lg-8">
+          <h2>Introdução</h2>
+          <p class="lead">
+            Com a evolução das viagens espaciais e consequente necessidade de
+            comunicação, a humanidade se deparou com um grande desafio nesse
+            campo: as tecnologias convencionais em redes não eram apropriadas
+            para transmissão de informações no espaço. Uma das principais
+            barreiras dessa problemática é o atraso na troca de pacotes entre
+            as estações. Assim, surgiu as Redes Tolerantes a Atrasos (em
+            Inglês DTN - <em>Delay/Disruption Tolerant Networking<em>) a fim de
+                estabelecer um sistema adequado para essa situação. O foco deste
+                trabalho será demonstrar os tipos, princípios e aspectos do
+                funcionamento dos protocolos de roteamento em DTN, tais como:
+
+                <l>
+                  <li>Protocolo de Roteamento Epidêmico</li>
+                  <li>Protocolo de Roteamento Pulverizar e Esperar (SWRP)</li>
+                  <li>
+                    Protocolo de Roteamento Probabilístico usando Histórico de
+                    Encontros e Transitividade (PROPHET)
+                  </li>
+                </l>
+          </p>
+        </div>
+      </div>
+    </div>  
+    <div class="center"><img src="dtn_example.png" alt="A beautiful sunset over the mountains" width="800px" height="500px"/></div>
+  
+  </section>
+
+  <section id="historia">
+    <div class="container px-4">
+      <div class="row gx-4 justify-content-center">
+        <div class="col-lg-8">
+          <h2>Contexto Histórico</h2>
+          <p class="lead">
+            A pesquisa começou como projetos financiados pelo governo dos
+            Estados Unidos relacionados à necessidade de tecnologias de rede
+            que pudessem suportar os atrasos significativos e a corrupção de
+            pacotes em viagens espaciais. Inicialmente, esses projetos visavam
+            apenas a comunicação de curto alcance entre missões tripuladas à
+            lua, mas o campo logo se expandiu em um subcampo completo de Redes
+            de Telecomunicações Disruptivas (DTNs), que criaram avanços
+            tecnológicos para permitir a Internet Interplanetária. Na década
+            de 1970, os pesquisadores começaram a desenvolver tecnologia para
+            roteamento entre computadores em locais não fixos. O uso
+            generalizado de protocolos sem fio na década de 1990 reacendeu o
+            interesse na área, com foco em roteamento ad hoc móvel e redes ad
+            hoc veiculares. Na década de 2000, o crescente interesse em
+            roteamento ad hoc móvel e a crescente complexidade da Internet
+            Interplanetária levaram ao surgimento de um grande número de
+            conferências acadêmicas sobre DTNs. Nesse campo, muitas
+            otimizações foram feitas em algoritmos clássicos de roteamento ad
+            hoc e tolerante a atrasos, e questões como segurança,
+            confiabilidade, verificabilidade e outras áreas de pesquisa bem
+            compreendidas em redes de computadores tradicionais começaram a
+            ser examinadas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services section-->
+  <section class="bg-light" id="services">
+    <div class="container px-4">
+      <div class="row gx-4 justify-content-center">
+        <div class="col-lg-8">
+          <h2>Entendendo os Algoritmos de roteamento em Protocolos DTN</h2>
+          <p class="lead">
+            Existem dois tipos de algoritmos nos Protocolos de Roteamento DTN que são os Algoritmos de Roteamento
+            clássico baseados em replicação(que engloba o algoritmo de Contato Direto, Epidêmico e o Spray and Wait) e
+            Algoritmos baseados em políticas de encaminhamento(FC (First Contact) , MED (Minimum Expected Delay), ED
+            (Earliest Delivery), EDAQ (Earliest Delivery with All Queue), LP (Linear Program)).
+          </p>
+          <p class="lead">
+          <h2>Clássico</h2>
+          <ol>
+            <li>Contato Direto: Nesse caso, o nó de origem transmite a mensagem diretamente para o nó de destino assim
+              que a conexão entre eles é estabelecida. Esse método não requer que a rede como um todo seja considerada
+              no processo de roteamento, concentrando-se apenas na comunicação entre o nó de origem e o de destino. No
+              entanto, pode haver atrasos significativos na comunicação em redes com interrupções frequentes de conexão.
+            </li>
+            <li>Epidêmico: é considerado um algoritmo de roteamento de múltiplas cópias, só que mais básico. Ele utiliza
+              um mecanismo de roteamento por inundação com múltiplas réplicas. Quando dois nós se encontram, eles copiam
+              e encaminham a mensagem. Se o nó atual não tiver um caminho de destino alcançável, a mensagem é armazenada
+              em cache por um longo período. Com recursos suficientes, o algoritmo epidêmico pode disseminar a cópia da
+              mensagem o mais rapidamente possível para atingir a taxa máxima de entrega e o mínimo atraso de
+              transmissão. No entanto, na prática, os recursos dos nós são limitados, e à medida que o número de
+              mensagens aumenta, a competição por recursos faz com que o desempenho do algoritmo epidêmico diminua
+              drasticamente. Além disso, consome uma grande quantidade de largura de banda, energia, memória cache e
+              outros recursos no processo de transmissão de mensagens.
+            </li>
+            <li>Spray and Wait: é uma modificação do algoritmo Epidêmico e tem como objetivo reduzir o consumo de
+              recursos e conflitos de competição causados pelo excesso de replicação de mensagens em redes de
+              comunicação DTN (Delay-Tolerant Networks). Esse algoritmo implementa um limite no número máximo de cópias
+              de mensagens na rede e realiza apenas um número limitado de transmissões de cópias de mensagens. A ideia
+              por trás do "Spray and Wait" é melhorar a utilização dos recursos da rede. Quando uma mensagem é gerada,
+              ela determina o número máximo de cópias que podem ser criadas. Na fase "Spray", quando um nó que possui
+              uma cópia da mensagem não encontra outro nó que também tenha a mesma mensagem, ele repassa metade da cópia
+              da mensagem para o outro nó e, assim, prossegue até que um nó tenha apenas uma cópia da mensagem. Nesta
+              fase, a rede está "espalhando" as cópias da mensagem de maneira mais controlada.
+
+              A segunda fase é chamada de "Wait". Nesta fase, cada nó que entra na fase "Wait" possui apenas uma cópia
+              da mensagem. A transmissão da mensagem não é concluída até que o nó de destino seja encontrado. Isso
+              significa que a rede espera até que a mensagem seja entregue ao seu destino.
+
+              O "Spray and Wait" é eficaz na redução do consumo de recursos e competição por recursos, uma vez que
+              limita o número de cópias de mensagens na rede e adota um processo de entrega mais controlado, aguardando
+              até que o destino seja encontrado. Essa abordagem visa melhorar a eficiência do uso de recursos em redes
+              DTN, onde as conexões entre nós podem ser intermitentes e os recursos são limitados.
+
+            </li>
+          </ol>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-light" id="services">
+    <div class="container px-4">
+      <div class="row gx-4 justify-content-center">
+        <div class="col-lg-8">
+          <h2>Spray and Wait Rounting Protocol</h2>
+          <p class="lead">
+            O protocolo foi proposto com a finalidade de controlar o nível de
+            difusão das mensagens através da rede. Assim como o protocolo de
+            roteamento epidêmico, o protocolo de disparada e espera não
+            necessita de conhecimento prévio da topologia da rede ou do padrão
+            de mobilidade dos nós. Ele simplesmente encaminha múltiplas cópias
+            da mensagem recebida utilizando inundação. A diferença entre
+            disparada e espera e o roteamento epidêmico é que aquele difunde
+            apenas L cópias da mensagem. Foi provado que o nível mínimo de L
+            para se obter o atraso esperado para a entrega da mensagem depende
+            do número de nós na rede e não do tamanho da rede e seu alcance de
+            transmissão.
+          </p>
+        </div>
+        <div class="center"><img src="saw.png" alt="A beautiful sunset over the mountains" width="600px" height="400px"/></div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Contact section-->
+  <section id="contact">
+    <div class="container px-4">
+      <div class="row gx-4 justify-content-center">
+        <div class="col-lg-8">
+          <h2>Epidemic Routing Protocol(#Alterado)</h2>
+          <p class="lead">
+            Epidemic Routing Protocol configura-se como um protocolo baseado
+            em encaminhamento por inundação - o que se significa que todos os
+            nós realiza a difusão(broadcast) das mensagens para todos os
+            vizinhos -, visando minimizar o uso de recursos, reduzir a
+            latência da arquitetura DTN e aumentar a taxa de entrega[1]. A
+            tecnologia em questão funciona da seguinte maneira:
+          </p>
+
+          <ol>
+            <li>
+              Supondo uma nó(N0) qualquer, este irá enviar as mensagens
+              armazenadas para os nós adjacentes;
+            </li>
+            <li>
+              Os vizinhos de N0 receberem a informação, verificam se essa está
+              na memória. Caso não esteja, o nós vizinhos encaminhará para
+              todos seus adjacentes(com exceção de N) através de broadcast.
+              Sendo esse processo repetido até o pacote chegar no destino.
+            </li>
+
+            <img src="epidemic.png" alt="A beautiful sunset over the mountains" />
+          </ol>
+
+          Observa-se que esse protocolo é do tipo “melhor-esforço”
+          (best-effort) e, com isso, existe um alto uso da memória, energia e
+          banda da rede - muitas vezes causando congestionamentos devido a
+          inundação. Diante disso, o ERP deve ser usado apenas quando não há
+          outra alternativa de tecnologia ou quando não se conhece muito bem a
+          topologia da rede.
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="PROPHET">
+    <div class="container px-4">
+      <div class="row gx-4 justify-content-center">
+        <div class="col-lg-8">
+          <h2>
+            PROPHET - Probabilistic ROuting Protocol using History of
+            Encounter and Transitivity
+          </h2>
+          <p class="lead">
+            O protocolo PROPHET parte do pressuposto básico de que a
+            mobilidade do nó não é aleatória, mas que possui um comportamento
+            repetitivo. No esquema do protocolo, é assumido que os nós tendem
+            a passar mais vezes por alguns locais do que em outros, isto é, se
+            um nó visitou muitas vezes uma determinada localidade, então há
+            grande probabilidade de que a visite novamente. Sendo assim, um
+            resultado plausível é o de que nós que se encontraram
+            anteriormente estão sujeitos a se encontrar novamente. O procolo
+            PROPHET foi proposto para aumentar a probabilidade de entrega e
+            reduzir o gasto de recursos de rede no protocolo de roteamento
+            epidêmico.
+          </p>
+        </div>
+        <div class="center"><img src="prp.png" alt="A beautiful sunset over the mountains" width="600px" height="400px"/></div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Footer-->
+  <footer class="py-5 bg-dark">
+    <div class="container px-4">
+      <p class="m-0 text-center text-white">
+        Copyright &copy; Your Website 2023
+      </p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="./bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+
+  <div class="jumbotron jumbotron-fluid bg-dark text-light" id="autoria">
+    <div class="container content">
+      <p>Redes de Computadores II - EEL879 - 2023.2</p>
+      <p>Escola Politecnica da Universidade Federal do Rio de Janeiro</p>
+      <p>Alunos: Gabriel Souza, Lucas Inocencio e Victor Assis</p>
+      <p>
+        "Este trabalho foi totalmente produzido pelos autores que declaram não
+        terem violado os direitos autorais de terceiros, sejam eles pessoas
+        físicas ou jurídicas. Havendo textos, tabelas e figuras transcritos de
+        obras de terceiros com direitos autorais protegidos ou de domínio
+        público tal como idéias e conceitos de terceiros, mesmo que sejam
+        encontrados na Internet, os mesmos estão com os devidos créditos aos
+        autores originais e estão incluídas apenas com o intuito de deixar o
+        trabalho autocontido. O(s) autor(es) tem(êm) ciência dos Artigos 297 a
+        299 do Código Penal Brasileiro e também que o uso do artifício de
+        copiar/colar texto de outras fontes e outras formas de plágio é um ato
+        ilícito, condenável e passível de punição severa. No contexto da
+        Universidade a punição não precisa se restringir à reprovação na
+        disciplina e pode gerar um processo disciplinar que pode levar o(s)
+        aluno(s) à suspensão;"
+      </p>
+    </div>
+  </div>
+</body>
+
 </html>

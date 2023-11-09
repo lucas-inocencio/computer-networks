@@ -247,6 +247,13 @@ strong {
   font-weight: bolder;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust the height as needed */
+}
+
 small,
 .small {
   font-size: 0.875em;
