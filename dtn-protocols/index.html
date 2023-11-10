@@ -44,6 +44,15 @@
               <a class="nav-link" href="#historia">História</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#swrp">SWRP</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#erp">ERP</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#prophet">PROPHET</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#siglas-acronimos"
                 >Siglas e Acrônimos</a
               >
@@ -86,7 +95,7 @@
               funcionamento dos protocolos de roteamento em DTN, tais como:
 
               <l>
-                <li>Protocolo de Roteamento Epidêmico</li>
+                <li>Protocolo de Roteamento Epidêmico (ERP)</li>
                 <li>Protocolo de Roteamento Pulverizar e Esperar (SWRP)</li>
                 <li>
                   Protocolo de Roteamento Probabilístico usando Histórico de
@@ -98,7 +107,7 @@
         </div>
       </div>
     </section>
-    <section id="historia">
+    <section class="bg-light" id="historia">
       <div class="container px-4">
         <div class="row gx-4 justify-content-center">
           <div class="col-lg-8">
@@ -131,11 +140,11 @@
       </div>
     </section>
     <!-- Services section-->
-    <section class="bg-light" id="services">
+    <section id="swrp">
       <div class="container px-4">
         <div class="row gx-4 justify-content-center">
           <div class="col-lg-8">
-            <h2>Spray and Wait Rounting Protocol</h2>
+            <h2>Protocolo de Roteamento Pulverizar e Esperar</h2>
             <p class="lead">
               O protocolo foi proposto com a finalidade de controlar o nível de
               difusão das mensagens através da rede. Assim como o protocolo de
@@ -154,11 +163,11 @@
       </div>
     </section>
     <!-- Contact section-->
-    <section id="contact">
+    <section class="bg-light" id="erp">
       <div class="container px-4">
         <div class="row gx-4 justify-content-center">
           <div class="col-lg-8">
-            <h2>Epidemic Routing Protocol(#Alterado)</h2>
+            <h2>Protocolo de Roteamento Epidêmico</h2>
             <p class="lead">
               Epidemic Routing Protocol configura-se como um protocolo baseado
               em encaminhamento por inundação - o que se significa que todos os
@@ -180,10 +189,16 @@
                 Sendo esse processo repetido até o pacote chegar no destino.
               </li>
 
-              <img
-                src="./img/epidemic.png"
-                alt="A beautiful sunset over the mountains"
-              />
+              <figure style="text-align: center">
+                <img
+                  src="./img/epidemic.png"
+                  alt="Método do Protoclo de Roteamento Epidêmico"
+                />
+                <figcaption>
+                  Figura 1. Método do Protocolo de Roteamento Epidêmico
+                </figcaption>
+              </figure>
+              alt="Método do Protoclo de Roteamento Epidêmico />
             </ol>
 
             Observa-se que esse protocolo é do tipo “melhor-esforço”
@@ -196,16 +211,17 @@
         </div>
       </div>
     </section>
-    <section id="PROPHET">
+    <section id="prophet">
       <div class="container px-4">
         <div class="row gx-4 justify-content-center">
           <div class="col-lg-8">
             <h2>
-              PROPHET - Probabilistic ROuting Protocol using History of
-              Encounter and Transitivity
+              Protocolo de Roteamento Probabilístico usando Histórico de
+              Encontros e Transitividade
             </h2>
             <p class="lead">
-              O protocolo PROPHET parte do pressuposto básico de que a
+              O protocolo Protocolo de Roteamento Probabilístico usando Histórico de
+              Encontros e Transitividade (PROPHET) parte do pressuposto básico de que a
               mobilidade do nó não é aleatória, mas que possui um comportamento
               repetitivo. No esquema do protocolo, é assumido que os nós tendem
               a passar mais vezes por alguns locais do que em outros, isto é, se
@@ -229,7 +245,7 @@
         </div>
       </div>
     </section>
-    <section id="siglas-acronimos">
+    <section class="bg-light" id="siglas-acronimos">
       <div class="container px-4">
         <div class="row gx-4 justify-content-center">
           <div class="col-lg-8">
@@ -278,8 +294,8 @@
             <p class="lead">
               Nazário, D. C., Menegazzo, C., Cezar, N. L., Pereira, J. V. e
               Albini, L. C. P. (2018). Avaliação de Protocolos de Roteamento em
-              Redes Tolerante a Atrasos e Desconexões. Computer on the Beach
-              IX, 160.
+              Redes Tolerante a Atrasos e Desconexões. Computer on the Beach IX,
+              160.
               <a
                 href="https://periodicos.univali.br/index.php/acotb/article/download/12747/7231"
                 target="_blank"
@@ -312,20 +328,20 @@
               Tolerant Network: A Survey and Comparison. Journal of Network and
               Computer Applications, 159, 102570.
               <a
-              href="https://cseweb.ucsd.edu/classes/wi02/cse294/adhocepidemics.pdf"
-              target="_blank"
-              >PDF</a
-            >
+                href="https://cseweb.ucsd.edu/classes/wi02/cse294/adhocepidemics.pdf"
+                target="_blank"
+                >PDF</a
+              >
             </p>
             <p class="lead">
               ALAOUI, E. A. A., AGOUJIL, S., HAJAR, M. e QARAAI Y. (2015). The
               Performance of DTN Routing Protocols: A Comparative Study. WSEAS
               Transactions on Communications, 14(12), 121-130.
               <a
-              href="https://www.wseas.org/multimedia/journals/communications/2015/a325704-585.pdf"
-              target="_blank"
-              >PDF</a
-            >
+                href="https://www.wseas.org/multimedia/journals/communications/2015/a325704-585.pdf"
+                target="_blank"
+                >PDF</a
+              >
             </p>
             <p class="lead">
               Vahdat, A. e Becker, D. (2000). Epidemic Routing for
