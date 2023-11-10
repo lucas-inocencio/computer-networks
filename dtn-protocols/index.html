@@ -46,6 +46,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#autoria">Autoria</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#referencias">Referencias</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -53,7 +56,9 @@
     <!-- Header-->
     <header class="bg-primary bg-gradient text-white">
       <div class="container px-4 text-center">
-        <h1 class="fw-bolder">Protocolos de Roteamento para Redes Tolerantes a Atrasos e Desconexões</h1>
+        <h1 class="fw-bolder">
+          Protocolos de Roteamento para Redes Tolerantes a Atrasos e Desconexões
+        </h1>
         <p class="lead">Redes de Computadores II - UFRJ</p>
       </div>
     </header>
@@ -70,9 +75,9 @@
               para transmissão de informações no espaço. Uma das principais
               barreiras dessa problemática é o atraso na troca de pacotes entre
               as estações. Assim, surgiu as Redes Tolerantes a Atrasos (em
-              Inglês DTN - <em>Delay/Disruption Tolerant Networking<em>) a fim de
-              estabelecer um sistema adequado para essa situação. O foco deste
-              trabalho será demonstrar os tipos, princípios e aspectos do
+              Inglês DTN - <em>Delay/Disruption Tolerant Networking</em>) a fim
+              de estabelecer um sistema adequado para essa situação. O foco
+              deste trabalho será demonstrar os tipos, princípios e aspectos do
               funcionamento dos protocolos de roteamento em DTN, tais como:
 
               <l>
@@ -158,94 +163,163 @@
               tecnologia em questão funciona da seguinte maneira:
             </p>
 
-          <ol>
-            <li>
-              Supondo uma nó(N0) qualquer, este irá enviar as mensagens
-              armazenadas para os nós adjacentes;
-            </li>
-            <li>
-              Os vizinhos de N0 receberem a informação, verificam se essa está
-              na memória. Caso não esteja, o nós vizinhos encaminhará para
-              todos seus adjacentes(com exceção de N) através de broadcast.
-              Sendo esse processo repetido até o pacote chegar no destino.
-            </li>
+            <ol>
+              <li>
+                Supondo uma nó(N0) qualquer, este irá enviar as mensagens
+                armazenadas para os nós adjacentes;
+              </li>
+              <li>
+                Os vizinhos de N0 receberem a informação, verificam se essa está
+                na memória. Caso não esteja, o nós vizinhos encaminhará para
+                todos seus adjacentes(com exceção de N) através de broadcast.
+                Sendo esse processo repetido até o pacote chegar no destino.
+              </li>
 
-            <img src="./img/epidemic.png" alt="A beautiful sunset over the mountains" />
-          </ol>
+              <img
+                src="./img/epidemic.png"
+                alt="A beautiful sunset over the mountains"
+              />
+            </ol>
 
-          Observa-se que esse protocolo é do tipo “melhor-esforço”
-          (best-effort) e, com isso, existe um alto uso da memória, energia e
-          banda da rede - muitas vezes causando congestionamentos devido a
-          inundação. Diante disso, o ERP deve ser usado apenas quando não há
-          outra alternativa de tecnologia ou quando não se conhece muito bem a
-          topologia da rede.
+            Observa-se que esse protocolo é do tipo “melhor-esforço”
+            (best-effort) e, com isso, existe um alto uso da memória, energia e
+            banda da rede - muitas vezes causando congestionamentos devido a
+            inundação. Diante disso, o ERP deve ser usado apenas quando não há
+            outra alternativa de tecnologia ou quando não se conhece muito bem a
+            topologia da rede.
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section id="PROPHET">
-    <div class="container px-4">
-      <div class="row gx-4 justify-content-center">
-        <div class="col-lg-8">
-          <h2>
-            PROPHET - Probabilistic ROuting Protocol using History of
-            Encounter and Transitivity
-          </h2>
-          <p class="lead">
-            O protocolo PROPHET parte do pressuposto básico de que a
-            mobilidade do nó não é aleatória, mas que possui um comportamento
-            repetitivo. No esquema do protocolo, é assumido que os nós tendem
-            a passar mais vezes por alguns locais do que em outros, isto é, se
-            um nó visitou muitas vezes uma determinada localidade, então há
-            grande probabilidade de que a visite novamente. Sendo assim, um
-            resultado plausível é o de que nós que se encontraram
-            anteriormente estão sujeitos a se encontrar novamente. O procolo
-            PROPHET foi proposto para aumentar a probabilidade de entrega e
-            reduzir o gasto de recursos de rede no protocolo de roteamento
-            epidêmico.
-          </p>
+    </section>
+    <section id="PROPHET">
+      <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+          <div class="col-lg-8">
+            <h2>
+              PROPHET - Probabilistic ROuting Protocol using History of
+              Encounter and Transitivity
+            </h2>
+            <p class="lead">
+              O protocolo PROPHET parte do pressuposto básico de que a
+              mobilidade do nó não é aleatória, mas que possui um comportamento
+              repetitivo. No esquema do protocolo, é assumido que os nós tendem
+              a passar mais vezes por alguns locais do que em outros, isto é, se
+              um nó visitou muitas vezes uma determinada localidade, então há
+              grande probabilidade de que a visite novamente. Sendo assim, um
+              resultado plausível é o de que nós que se encontraram
+              anteriormente estão sujeitos a se encontrar novamente. O procolo
+              PROPHET foi proposto para aumentar a probabilidade de entrega e
+              reduzir o gasto de recursos de rede no protocolo de roteamento
+              epidêmico.
+            </p>
+          </div>
+          <div class="center">
+            <img
+              src="./img/prp.png"
+              alt="A beautiful sunset over the mountains"
+              width="600px"
+              height="400px"
+            />
+          </div>
         </div>
-        <div class="center"><img src="./img/prp.png" alt="A beautiful sunset over the mountains" width="600px" height="400px"/></div>
+      </div>
+    </section>
+    <section id="referencias">
+      <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+          <div class="col-lg-8">
+            <h2>Referências</h2>
+            <p class="lead">
+              Fall, K. J. e Farrell, S. (2023). DTN: an architectural
+              retrospective. IEEE Communications Magazine, 61(1), 108-115.
+            </p>
+            <p class="lead">
+              Oliveira, C. T., Moreira, M. D. D., Rubinstein, M. G., Costa, L.
+              H. M. K. e Duarte, O. C. M. B. (2007). Redes Tolerantes a Atrasos
+              e Desconexões. Relatório Técnico No. 499.09.
+            </p>
+            <p class="lead">
+              Nazário, D. C., Menegazzo, C., Cezar, N. L., Pereira, J. V. e
+              Albini, L. C. P. (2023). Avaliação de Protocolos de Roteamento em
+              Redes Tolerante a Atrasos e Desconexões. Acotb, 12(1), 1-10.
+            </p>
+            <p class="lead">
+              Grasic, S., Davies, E., Lindgren, A. e Doria, A. (2023). The
+              Evolution of a DTN Routing Protocol - PRoPHETv2. ACM SIGCOMM
+              Computer Communication Review, 43(4), 102-107.
+            </p>
+            <p class="lead">
+              Mehta, N. e Shah, M. (2023). Performance of Efficient Routing
+              Protocol in Delay Tolerant Network: A Comparative Survey. ACM
+              Computing Surveys, 56(3), 1-36.
+            </p>
+            <p class="lead">
+              Mangrulka, R. S. e Atique, M. (2023). Routing Protocol for Delay
+              Tolerant Network: A Survey and Comparison. Journal of Network and
+              Computer Applications, 159, 102570. ALAOUI, E. A. A., AGOUJIL, S.,
+              HAJAR, M. e QARAAI Y. (2015). The Performance of DTN Routing
+              Protocols: A Comparative Study. WSEAS Transactions on
+              Communications, 14(12), 1157-1166.
+            </p>
+            <p class="lead">
+              Vahdat, A. e Becker, D. (2000). Epidemic Routing for
+              Partially-Connected Ad Hoc Networks. Disponível em:
+              <https://cseweb.ucsd.edu/classes/wi02/cse294/adhocepidemics.pdf>.
+              Acesso em: 2023-11-10.
+            </p>
+            <p class="lead">
+              Tabarelli, A. e Silva, C. C. (2009). Redes Tolerantes a Atrasos,
+              Protocolos de Disseminação e Aplicações. Monografia. Instituto
+              Militar de Engenharia. Disponível em:
+              <https://www.ime.usp.br/~cef/mac499-09/monografias/adriano-caio/monografia.pdf>.
+              Acesso em: 2023-11-10.
+            </p>
+            <p class="lead">
+              Ozório, G. e Saytson, T. (2023). DTN - Delay Tolerant Networks:
+              Spray and Wait Rounting Protocol. Disponível em:
+              <https://www.ime.usp.br/~cef/mac499-09/monografias/adriano-caio/monografia.pdf>.
+              Acesso em: 2023-11-10.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+      <div class="container px-4">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; Your Website 2023
+        </p>
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+
+    <div class="jumbotron jumbotron-fluid bg-dark text-light" id="autoria">
+      <div class="container content">
+        <p>Redes de Computadores II - EEL879 - 2023.2</p>
+        <p>Escola Politecnica da Universidade Federal do Rio de Janeiro</p>
+        <p>Alunos: Gabriel Souza, Lucas Inocencio e Victor Assis</p>
+        <p>
+          "Este trabalho foi totalmente produzido pelos autores que declaram não
+          terem violado os direitos autorais de terceiros, sejam eles pessoas
+          físicas ou jurídicas. Havendo textos, tabelas e figuras transcritos de
+          obras de terceiros com direitos autorais protegidos ou de domínio
+          público tal como idéias e conceitos de terceiros, mesmo que sejam
+          encontrados na Internet, os mesmos estão com os devidos créditos aos
+          autores originais e estão incluídas apenas com o intuito de deixar o
+          trabalho autocontido. O(s) autor(es) tem(êm) ciência dos Artigos 297 a
+          299 do Código Penal Brasileiro e também que o uso do artifício de
+          copiar/colar texto de outras fontes e outras formas de plágio é um ato
+          ilícito, condenável e passível de punição severa. No contexto da
+          Universidade a punição não precisa se restringir à reprovação na
+          disciplina e pode gerar um processo disciplinar que pode levar o(s)
+          aluno(s) à suspensão;"
+        </p>
       </div>
     </div>
-  </section>
-  <!-- Footer-->
-  <footer class="py-5 bg-dark">
-    <div class="container px-4">
-      <p class="m-0 text-center text-white">
-        Copyright &copy; Your Website 2023
-      </p>
-    </div>
-  </footer>
-  <!-- Bootstrap core JS-->
-  <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Core theme JS-->
-  <script src="js/scripts.js"></script>
-
-  <div class="jumbotron jumbotron-fluid bg-dark text-light" id="autoria">
-    <div class="container content">
-      <p>Redes de Computadores II - EEL879 - 2023.2</p>
-      <p>Escola Politecnica da Universidade Federal do Rio de Janeiro</p>
-      <p>Alunos: Gabriel Souza, Lucas Inocencio e Victor Assis</p>
-      <p>
-        "Este trabalho foi totalmente produzido pelos autores que declaram não
-        terem violado os direitos autorais de terceiros, sejam eles pessoas
-        físicas ou jurídicas. Havendo textos, tabelas e figuras transcritos de
-        obras de terceiros com direitos autorais protegidos ou de domínio
-        público tal como idéias e conceitos de terceiros, mesmo que sejam
-        encontrados na Internet, os mesmos estão com os devidos créditos aos
-        autores originais e estão incluídas apenas com o intuito de deixar o
-        trabalho autocontido. O(s) autor(es) tem(êm) ciência dos Artigos 297 a
-        299 do Código Penal Brasileiro e também que o uso do artifício de
-        copiar/colar texto de outras fontes e outras formas de plágio é um ato
-        ilícito, condenável e passível de punição severa. No contexto da
-        Universidade a punição não precisa se restringir à reprovação na
-        disciplina e pode gerar um processo disciplinar que pode levar o(s)
-        aluno(s) à suspensão;"
-      </p>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>
