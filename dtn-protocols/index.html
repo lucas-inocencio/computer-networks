@@ -53,9 +53,7 @@
     <!-- Header-->
     <header class="bg-primary bg-gradient text-white">
       <div class="container px-4 text-center">
-        <h1 class="fw-bolder">
-          Protocolos de Roteamento para Redes Tolerantes a Atrasos e Desconexões
-        </h1>
+        <h1 class="fw-bolder">Protocolos de Roteamento para Redes Tolerantes a Atrasos e Desconexões</h1>
         <p class="lead">Redes de Computadores II - UFRJ</p>
       </div>
     </header>
@@ -72,9 +70,9 @@
               para transmissão de informações no espaço. Uma das principais
               barreiras dessa problemática é o atraso na troca de pacotes entre
               as estações. Assim, surgiu as Redes Tolerantes a Atrasos (em
-              Inglês DTN - <em>Delay/Disruption Tolerant Networking</em>) a fim
-              de estabelecer um sistema adequado para essa situação. O foco
-              deste trabalho será demonstrar os tipos, princípios e aspectos do
+              Inglês DTN - <em>Delay/Disruption Tolerant Networking<em>) a fim de
+              estabelecer um sistema adequado para essa situação. O foco deste
+              trabalho será demonstrar os tipos, princípios e aspectos do
               funcionamento dos protocolos de roteamento em DTN, tais como:
 
               <l>
@@ -103,24 +101,20 @@
               apenas a comunicação de curto alcance entre missões tripuladas à
               lua, mas o campo logo se expandiu em um subcampo completo de Redes
               de Telecomunicações Disruptivas (DTNs), que criaram avanços
-              tecnológicos para permitir a Internet Interplanetária.
-            </p>
-            <p class="lead">
-              Na década de 1970, os pesquisadores começaram a desenvolver
-              tecnologia para roteamento entre computadores em locais não fixos.
-              O uso generalizado de protocolos sem fio na década de 1990
-              reacendeu o interesse na área, com foco em roteamento ad hoc móvel
-              e redes ad hoc veiculares.
-            </p>
-            <p class="lead">
-              Na década de 2000, o crescente interesse em roteamento ad hoc
-              móvel e a crescente complexidade da Internet Interplanetária
-              levaram ao surgimento de um grande número de conferências
-              acadêmicas sobre DTNs. Nesse campo, muitas otimizações foram
-              feitas em algoritmos clássicos de roteamento ad hoc e tolerante a
-              atrasos, e questões como segurança, confiabilidade,
-              verificabilidade e outras áreas de pesquisa bem compreendidas em
-              redes de computadores tradicionais começaram a ser examinadas.
+              tecnológicos para permitir a Internet Interplanetária. Na década
+              de 1970, os pesquisadores começaram a desenvolver tecnologia para
+              roteamento entre computadores em locais não fixos. O uso
+              generalizado de protocolos sem fio na década de 1990 reacendeu o
+              interesse na área, com foco em roteamento ad hoc móvel e redes ad
+              hoc veiculares. Na década de 2000, o crescente interesse em
+              roteamento ad hoc móvel e a crescente complexidade da Internet
+              Interplanetária levaram ao surgimento de um grande número de
+              conferências acadêmicas sobre DTNs. Nesse campo, muitas
+              otimizações foram feitas em algoritmos clássicos de roteamento ad
+              hoc e tolerante a atrasos, e questões como segurança,
+              confiabilidade, verificabilidade e outras áreas de pesquisa bem
+              compreendidas em redes de computadores tradicionais começaram a
+              ser examinadas.
             </p>
           </div>
         </div>
@@ -164,94 +158,94 @@
               tecnologia em questão funciona da seguinte maneira:
             </p>
 
-            <ol>
-              <li>
-                Supondo uma nó(N0) qualquer, este irá enviar as mensagens
-                armazenadas para os nós adjacentes;
-              </li>
-              <li>
-                Os vizinhos de N0 receberem a informação, verificam se essa está
-                na memória. Caso não esteja, o nós vizinhos encaminhará para
-                todos seus adjacentes(com exceção de N) através de broadcast.
-                Sendo esse processo repetido até o pacote chegar no destino.
-              </li>
+          <ol>
+            <li>
+              Supondo uma nó(N0) qualquer, este irá enviar as mensagens
+              armazenadas para os nós adjacentes;
+            </li>
+            <li>
+              Os vizinhos de N0 receberem a informação, verificam se essa está
+              na memória. Caso não esteja, o nós vizinhos encaminhará para
+              todos seus adjacentes(com exceção de N) através de broadcast.
+              Sendo esse processo repetido até o pacote chegar no destino.
+            </li>
 
-              <img
-                src="epidemic.png"
-                alt="A beautiful sunset over the mountains"
-              />
-            </ol>
+            <img src="epidemic.png" alt="A beautiful sunset over the mountains" />
+          </ol>
 
-            Observa-se que esse protocolo é do tipo “melhor-esforço”
-            (best-effort) e, com isso, existe um alto uso da memória, energia e
-            banda da rede - muitas vezes causando congestionamentos devido a
-            inundação. Diante disso, o ERP deve ser usado apenas quando não há
-            outra alternativa de tecnologia ou quando não se conhece muito bem a
-            topologia da rede.
-          </div>
+          Observa-se que esse protocolo é do tipo “melhor-esforço”
+          (best-effort) e, com isso, existe um alto uso da memória, energia e
+          banda da rede - muitas vezes causando congestionamentos devido a
+          inundação. Diante disso, o ERP deve ser usado apenas quando não há
+          outra alternativa de tecnologia ou quando não se conhece muito bem a
+          topologia da rede.
         </div>
-      </div>
-    </section>
-    <section id="PROPHET">
-      <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-          <div class="col-lg-8">
-            <h2>
-              PROPHET - Probabilistic ROuting Protocol using History of
-              Encounter and Transitivity
-            </h2>
-            <p class="lead">
-              O protocolo PROPHET parte do pressuposto básico de que a
-              mobilidade do nó não é aleatória, mas que possui um comportamento
-              repetitivo. No esquema do protocolo, é assumido que os nós tendem
-              a passar mais vezes por alguns locais do que em outros, isto é, se
-              um nó visitou muitas vezes uma determinada localidade, então há
-              grande probabilidade de que a visite novamente. Sendo assim, um
-              resultado plausível é o de que nós que se encontraram
-              anteriormente estão sujeitos a se encontrar novamente. O procolo
-              PROPHET foi proposto para aumentar a probabilidade de entrega e
-              reduzir o gasto de recursos de rede no protocolo de roteamento
-              epidêmico.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Footer-->
-    <footer class="py-5 bg-dark">
-      <div class="container px-4">
-        <p class="m-0 text-center text-white">
-          Copyright &copy; Your Website 2023
-        </p>
-      </div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <script src="./bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-
-    <div class="jumbotron jumbotron-fluid bg-dark text-light" id="autoria">
-      <div class="container content">
-        <p>Redes de Computadores II - EEL879 - 2023.2</p>
-        <p>Escola Politecnica da Universidade Federal do Rio de Janeiro</p>
-        <p>Alunos: Gabriel Souza, Lucas Inocencio e Victor Assis</p>
-        <p>
-          "Este trabalho foi totalmente produzido pelos autores que declaram não
-          terem violado os direitos autorais de terceiros, sejam eles pessoas
-          físicas ou jurídicas. Havendo textos, tabelas e figuras transcritos de
-          obras de terceiros com direitos autorais protegidos ou de domínio
-          público tal como idéias e conceitos de terceiros, mesmo que sejam
-          encontrados na Internet, os mesmos estão com os devidos créditos aos
-          autores originais e estão incluídas apenas com o intuito de deixar o
-          trabalho autocontido. O(s) autor(es) tem(êm) ciência dos Artigos 297 a
-          299 do Código Penal Brasileiro e também que o uso do artifício de
-          copiar/colar texto de outras fontes e outras formas de plágio é um ato
-          ilícito, condenável e passível de punição severa. No contexto da
-          Universidade a punição não precisa se restringir à reprovação na
-          disciplina e pode gerar um processo disciplinar que pode levar o(s)
-          aluno(s) à suspensão;"
-        </p>
       </div>
     </div>
-  </body>
+  </section>
+  <section id="PROPHET">
+    <div class="container px-4">
+      <div class="row gx-4 justify-content-center">
+        <div class="col-lg-8">
+          <h2>
+            PROPHET - Probabilistic ROuting Protocol using History of
+            Encounter and Transitivity
+          </h2>
+          <p class="lead">
+            O protocolo PROPHET parte do pressuposto básico de que a
+            mobilidade do nó não é aleatória, mas que possui um comportamento
+            repetitivo. No esquema do protocolo, é assumido que os nós tendem
+            a passar mais vezes por alguns locais do que em outros, isto é, se
+            um nó visitou muitas vezes uma determinada localidade, então há
+            grande probabilidade de que a visite novamente. Sendo assim, um
+            resultado plausível é o de que nós que se encontraram
+            anteriormente estão sujeitos a se encontrar novamente. O procolo
+            PROPHET foi proposto para aumentar a probabilidade de entrega e
+            reduzir o gasto de recursos de rede no protocolo de roteamento
+            epidêmico.
+          </p>
+        </div>
+        <div class="center"><img src="prp.png" alt="A beautiful sunset over the mountains" width="600px" height="400px"/></div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Footer-->
+  <footer class="py-5 bg-dark">
+    <div class="container px-4">
+      <p class="m-0 text-center text-white">
+        Copyright &copy; Your Website 2023
+      </p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="./bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+
+  <div class="jumbotron jumbotron-fluid bg-dark text-light" id="autoria">
+    <div class="container content">
+      <p>Redes de Computadores II - EEL879 - 2023.2</p>
+      <p>Escola Politecnica da Universidade Federal do Rio de Janeiro</p>
+      <p>Alunos: Gabriel Souza, Lucas Inocencio e Victor Assis</p>
+      <p>
+        "Este trabalho foi totalmente produzido pelos autores que declaram não
+        terem violado os direitos autorais de terceiros, sejam eles pessoas
+        físicas ou jurídicas. Havendo textos, tabelas e figuras transcritos de
+        obras de terceiros com direitos autorais protegidos ou de domínio
+        público tal como idéias e conceitos de terceiros, mesmo que sejam
+        encontrados na Internet, os mesmos estão com os devidos créditos aos
+        autores originais e estão incluídas apenas com o intuito de deixar o
+        trabalho autocontido. O(s) autor(es) tem(êm) ciência dos Artigos 297 a
+        299 do Código Penal Brasileiro e também que o uso do artifício de
+        copiar/colar texto de outras fontes e outras formas de plágio é um ato
+        ilícito, condenável e passível de punição severa. No contexto da
+        Universidade a punição não precisa se restringir à reprovação na
+        disciplina e pode gerar um processo disciplinar que pode levar o(s)
+        aluno(s) à suspensão;"
+      </p>
+    </div>
+  </div>
+</body>
+
 </html>
