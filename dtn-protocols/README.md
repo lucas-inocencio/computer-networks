@@ -3,6 +3,8 @@
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Feito com](#feito-com)
 - [Primeiros Passos](#primeiros-passos)
+    - [Pre-requisitos](#pre-requisitos)
+    - [Instalacao](#instalacao)
 - [Roadmap](#roadmap)
 - [Contribuicao](#contribuicao)
 - [Licenca](#licenca)
@@ -17,13 +19,13 @@ Tema do trabalho: Protocolos de Roteamento para DTN
 
 # Feito com
 
-Boostrap 5.3.1 
+Boostrap 5.3.1
 
 # Primeiros Passos
 
 ## Pre-requisitos
 
-Nao ha pre-requisitos para este projeto porque ele e estatico e a dependencia do Boostrap ja esta incluida no projeto.
+Não há pré-requisitos para este projeto porque ele é estático e a dependência do Bootstrap já está incluída no projeto.
 
 ## Instalacao
 
@@ -35,14 +37,14 @@ Nao ha pre-requisitos para este projeto porque ele e estatico e a dependencia do
 # Roadmap
 
 https://www.gta.ufrj.br/grad/verificacao-de-conformidade.html
-- [ ] Verificacao de conformidades
-    - [ ] Primeira pagina
-    - [ ] Conclusao
-    - [ ] Usabilidade
-    - [ ] Siglas e abreviacoes
-    - [ ] Figuras e tabelas
-    - [ ] Referencias
-    
+
+- [x] Verificacao de conformidades
+  - [x] Primeira pagina
+  - [x] Conclusao
+  - [x] Usabilidade
+  - [x] Siglas e abreviacoes
+  - [x] Figuras e tabelas
+  - [x] Referencias
 - [ ] Trabalho Pratico
 
 # Contribuicao
